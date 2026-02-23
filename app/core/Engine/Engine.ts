@@ -178,6 +178,8 @@ import { rampsServiceInit } from './controllers/ramps-controller/ramps-service-i
 import { rampsControllerInit } from './controllers/ramps-controller/ramps-controller-init';
 import { aiDigestControllerInit } from './controllers/ai-digest-controller-init';
 import { transakServiceInit } from './controllers/ramps-controller/transak-service-init';
+import { complianceServiceInit } from './controllers/compliance/compliance-service-init';
+import { complianceControllerInit } from './controllers/compliance/compliance-controller-init';
 
 // TODO: Replace "any" with type
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -371,6 +373,8 @@ export class Engine {
         TransakService: transakServiceInit,
         RampsController: rampsControllerInit,
         AiDigestController: aiDigestControllerInit,
+        ComplianceService: complianceServiceInit,
+        ComplianceController: complianceControllerInit,
       },
       persistedState: initialState as EngineState,
       baseControllerMessenger: this.controllerMessenger,
@@ -411,6 +415,7 @@ export class Engine {
     const transakService = controllersByName.TransakService;
     const rampsController = controllersByName.RampsController;
     const aiDigestController = controllersByName.AiDigestController;
+    const complianceController = controllersByName.ComplianceController;
 
     // Backwards compatibility for existing references
     this.accountsController = accountsController;
@@ -569,6 +574,7 @@ export class Engine {
       TransakService: transakService,
       RampsController: rampsController,
       AiDigestController: aiDigestController,
+      ComplianceController: complianceController,
     };
 
     const childControllers = Object.assign({}, this.context);
@@ -1325,6 +1331,7 @@ export default {
       TransactionPayController,
       RampsController,
       AiDigestController,
+      ComplianceController,
       ///: BEGIN:ONLY_INCLUDE_IF(preinstalled-snaps,external-snaps)
       AuthenticationController,
       CronjobController,
@@ -1394,6 +1401,7 @@ export default {
       TransactionPayController: TransactionPayController.state,
       RampsController: RampsController.state,
       AiDigestController: AiDigestController.state,
+      ComplianceController: ComplianceController.state,
       ///: BEGIN:ONLY_INCLUDE_IF(preinstalled-snaps,external-snaps)
       AuthenticationController: AuthenticationController.state,
       CronjobController: CronjobController.state,

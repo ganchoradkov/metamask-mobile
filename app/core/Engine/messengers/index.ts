@@ -146,6 +146,11 @@ import {
 import { getProfileMetricsServiceMessenger } from './profile-metrics-service-messenger';
 import { getAnalyticsControllerMessenger } from './analytics-controller-messenger';
 import { getAiDigestControllerMessenger } from './ai-digest-controller-messenger';
+import { getComplianceServiceMessenger } from './compliance/compliance-service-messenger';
+import {
+  getComplianceControllerMessenger,
+  getComplianceControllerInitMessenger,
+} from './compliance/compliance-controller-messenger';
 
 /**
  * The messengers for the controllers that have been.
@@ -456,5 +461,13 @@ export const CONTROLLER_MESSENGERS = {
   AiDigestController: {
     getMessenger: getAiDigestControllerMessenger,
     getInitMessenger: noop,
+  },
+  ComplianceService: {
+    getMessenger: getComplianceServiceMessenger,
+    getInitMessenger: noop,
+  },
+  ComplianceController: {
+    getMessenger: getComplianceControllerMessenger,
+    getInitMessenger: getComplianceControllerInitMessenger,
   },
 } as const;

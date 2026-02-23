@@ -15,6 +15,7 @@ export enum FeatureFlagNames {
   tokenDetailsV2 = 'tokenDetailsV2',
   tokenDetailsV2Buttons = 'tokenDetailsV2Buttons',
   tokenDetailsV2ButtonLayout = 'tokenDetailsV2ButtonLayout',
+  complianceEnabled = 'complianceEnabled',
 }
 
 export const DEFAULT_FEATURE_FLAG_VALUES: Partial<
@@ -24,4 +25,5 @@ export const DEFAULT_FEATURE_FLAG_VALUES: Partial<
   [FeatureFlagNames.tokenDetailsV2]: false,
   [FeatureFlagNames.tokenDetailsV2Buttons]: false,
   [FeatureFlagNames.tokenDetailsV2ButtonLayout]: false,
+  [FeatureFlagNames.complianceEnabled]: false,
 };

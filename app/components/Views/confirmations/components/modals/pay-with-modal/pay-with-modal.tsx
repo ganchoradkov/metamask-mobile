@@ -34,9 +34,14 @@ import { usePerpsPaymentToken } from '../../../../../UI/Perps/hooks/usePerpsPaym
 import { usePredictBalanceTokenFilter } from '../../../../../UI/Predict/hooks/usePredictBalanceTokenFilter';
 import { usePredictPaymentToken } from '../../../../../UI/Predict/hooks/usePredictPaymentToken';
 import { PREDICT_DEPOSIT_AND_ORDER_TYPE } from '../../../constants/predict';
+import { usePredictActiveOrder } from '../../../../../UI/Predict/hooks/usePredictActiveOrder';
 
 export function PayWithModal() {
   const transactionMeta = useTransactionMetadataRequest();
+  const activePredictOrder = usePredictActiveOrder();
+  const isPredictPayContext =
+    hasTransactionType(transactionMeta, [PREDICT_DEPOSIT_AND_ORDER_TYPE]) ||
+    (!transactionMeta && Boolean(activePredictOrder));
   const hideNetworkFilter = hasTransactionType(
     transactionMeta,
     HIDE_NETWORK_FILTER_TYPES,
@@ -55,7 +60,8 @@ export function PayWithModal() {
   const blockedTokens = useTransactionPayBlockedTokens();
   const { onPaymentTokenChange: onPredictPaymentTokenChange } =
     usePredictPaymentToken();
-  const predictBalanceTokenFilter = usePredictBalanceTokenFilter();
+  const predictBalanceTokenFilter =
+    usePredictBalanceTokenFilter(isPredictPayContext);
 
   const close = useCallback((onClosed?: () => void) => {
     // Called after the bottom sheet's closing animation completes.
@@ -155,6 +161,7 @@ export function PayWithModal() {
       onPredictPaymentTokenChange,
       setPayToken,
       transactionMeta,
+      isPredictPayContext,
     ],
   );
 
@@ -184,9 +191,7 @@ export function PayWithModal() {
         ])
       ) {
         filteredTokens = perpsBalanceTokenFilter(availableTokens);
-      } else if (
-        hasTransactionType(transactionMeta, [PREDICT_DEPOSIT_AND_ORDER_TYPE])
-      ) {
+      } else if (isPredictPayContext) {
         filteredTokens = predictBalanceTokenFilter(availableTokens);
       }
 
@@ -199,6 +204,7 @@ export function PayWithModal() {
       payToken,
       requiredTokens,
       transactionMeta,
+      isPredictPayContext,
       perpsBalanceTokenFilter,
       predictBalanceTokenFilter,
       wrapHighlightedItemCallbacks,

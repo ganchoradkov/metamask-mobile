@@ -22,8 +22,12 @@ flowchart TD
     N --> O{Errors?}
     O -->|Yes| P[Fix errors]
     P --> N
-    O -->|No| Q[Step 4: Run detox test locally]
-    Q --> R{Pass?}
+    O -->|No| Q[Step 4a: Check iOS build exists]
+    Q --> Q2{Build present?}
+    Q2 -->|No| Q3[yarn test:e2e:ios:debug:build]
+    Q3 --> Q4[Step 4b: Run detox test]
+    Q2 -->|Yes| Q4
+    Q4 --> R{Pass?}
     R -->|Yes| S[Done ✓]
     R -->|No| T[Analyze failure → Fix]
     T --> Q
@@ -284,29 +288,55 @@ yarn lint:tsc
 
 Fix all errors. Do not run the test with lint/tsc errors.
 
-## Step 4: Run the Test Locally
+## Step 4: Verify Build & Run the Test Locally
 
-Requires a built app (debug build). Run a single spec:
+### 4a. Verify the Build Exists
+
+Before running, check whether the iOS debug build is present:
 
 ```bash
-# iOS (most common for local runs)
+# Default binary path (from .detoxrc.js)
+ls ios/build/Build/Products/Debug-iphonesimulator/MetaMask.app 2>/dev/null \
+  && echo "✅ Build found" \
+  || echo "❌ Build missing — run: yarn test:e2e:ios:debug:build"
+```
+
+If the `PREBUILT_IOS_APP_PATH` environment variable is set, use that path instead:
+
+```bash
+# If using a pre-built binary from CI
+ls "${PREBUILT_IOS_APP_PATH}" 2>/dev/null \
+  && echo "✅ Pre-built binary found at $PREBUILT_IOS_APP_PATH" \
+  || echo "❌ PREBUILT_IOS_APP_PATH set but binary not found at: $PREBUILT_IOS_APP_PATH"
+```
+
+**Decision**:
+
+- Build exists → proceed to 4b
+- Build missing + have ~30 min → `yarn test:e2e:ios:debug:build` then proceed
+- Build missing + no time → stop and inform the user; do not attempt to run
+
+> iOS simulator builds require no physical device and no manual interaction during test execution — prefer iOS for local runs.
+
+### 4b. Run a Single Spec
+
+```bash
+# iOS (preferred for local — no manual interaction needed)
 IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
   detox test -c ios.sim.main \
   --testPathPattern="tests/<regression|smoke>/<feature>/<spec>.spec.ts"
 
-# Android
+# Run a specific test case by name
+IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
+  detox test -c ios.sim.main \
+  --testPathPattern="tests/<regression|smoke>/<feature>/<spec>.spec.ts" \
+  --testNamePattern="<exact test name>"
+
+# Android (requires running emulator)
 IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
   detox test -c android.emu.main \
   --testPathPattern="tests/<regression|smoke>/<feature>/<spec>.spec.ts"
-
-# Run a specific test by name
-IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
-  detox test -c ios.sim.main \
-  --testPathPattern="<spec>.spec.ts" \
-  --testNamePattern="<exact test name>"
 ```
-
-> If the app is not built yet: `yarn test:e2e:ios:debug:build` first.
 
 ## Step 5: Iterate Until Green
 

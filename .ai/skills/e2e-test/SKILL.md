@@ -48,15 +48,19 @@ Step 5 → Iterate (fix → lint → run) until green
 ## Quick Commands
 
 ```bash
-# Run a specific spec (iOS)
-IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
-  detox test -c ios.sim.main \
-  --testPathPattern="tests/regression/<feature>/<spec>.spec.ts"
+# 1. Check if iOS build exists (do this first)
+ls ios/build/Build/Products/Debug-iphonesimulator/MetaMask.app 2>/dev/null \
+  && echo "✅ Build ready" || echo "❌ Run: yarn test:e2e:ios:debug:build"
 
-# Lint the new files
+# 2. Build if missing (~20-30 min, simulator only — no device needed)
+yarn test:e2e:ios:debug:build
+
+# 3. Lint before running
 yarn lint tests/regression/<feature>/<spec>.spec.ts --fix
 yarn lint:tsc
 
-# Build if app not built yet
-yarn test:e2e:ios:debug:build
+# 4. Run a specific spec (iOS — preferred, no manual interaction)
+IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
+  detox test -c ios.sim.main \
+  --testPathPattern="tests/regression/<feature>/<spec>.spec.ts"
 ```

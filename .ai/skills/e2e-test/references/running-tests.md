@@ -1,21 +1,38 @@
 # Running & Debugging E2E Tests — Reference
 
-## Prerequisites
+## Step 1: Verify the Build Exists
 
-The app must be built before running tests. Build once and reuse:
+**Always check before running.** The binary path comes from `.detoxrc.js`:
 
 ```bash
-# iOS debug build
+# Check default iOS debug build path
+ls ios/build/Build/Products/Debug-iphonesimulator/MetaMask.app 2>/dev/null \
+  && echo "✅ Build found — ready to run" \
+  || echo "❌ Build missing"
+
+# If PREBUILT_IOS_APP_PATH is set (CI pre-built binary), check that instead
+[ -n "$PREBUILT_IOS_APP_PATH" ] && \
+  ls "$PREBUILT_IOS_APP_PATH" 2>/dev/null \
+  && echo "✅ Pre-built binary found" \
+  || echo "❌ PREBUILT_IOS_APP_PATH set but binary not found at: $PREBUILT_IOS_APP_PATH"
+```
+
+**If the build is missing**, trigger it (takes ~20-30 min):
+
+```bash
+# iOS debug build (simulator, no device needed)
 yarn test:e2e:ios:debug:build
 
-# Android debug build
+# Android debug build (requires emulator)
 yarn test:e2e:android:debug:build
 ```
 
-## Run a Specific Spec
+> Prefer **iOS** for local runs: simulator builds need no physical device and tests execute with zero manual interaction.
+
+## Step 2: Run a Specific Spec
 
 ```bash
-# iOS — run one spec file
+# iOS — run one spec file (preferred for local runs)
 IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
   detox test -c ios.sim.main \
   --testPathPattern="tests/regression/predict/predict-buy-flow.spec.ts"
@@ -26,7 +43,7 @@ IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
   --testPathPattern="tests/regression/predict/predict-buy-flow.spec.ts" \
   --testNamePattern="opens market details from market list"
 
-# Android — run one spec file
+# Android — run one spec file (requires running emulator)
 IS_TEST='true' NODE_OPTIONS='--experimental-vm-modules' \
   detox test -c android.emu.main \
   --testPathPattern="tests/regression/predict/predict-buy-flow.spec.ts"

@@ -1432,7 +1432,7 @@ describe('AccountConnect', () => {
       });
     });
 
-    it('renders TrustSignalModal when trust signal state is Warning', () => {
+    it('renders PermissionsSummary (SingleConnect) when trust signal state is Warning', () => {
       mockUseOriginTrustSignals.mockReturnValue({
         state: TrustSignalDisplayState.Warning,
         label: 'Suspicious site',
@@ -1443,10 +1443,10 @@ describe('AccountConnect', () => {
         { state: mockInitialState },
       );
 
-      // TrustSignalModal should be visible
-      expect(getByTestId(TrustSignalModalSelectorsIDs.CONTAINER)).toBeDefined();
-      // PermissionsSummary should NOT be visible
-      expect(queryByTestId('permission-summary-container')).toBeNull();
+      // PermissionsSummary should be visible (Warning no longer gates)
+      expect(getByTestId('permission-summary-container')).toBeDefined();
+      // TrustSignalModal should NOT be visible
+      expect(queryByTestId(TrustSignalModalSelectorsIDs.CONTAINER)).toBeNull();
     });
 
     it('renders TrustSignalModal when trust signal state is Malicious', () => {
@@ -1502,8 +1502,8 @@ describe('AccountConnect', () => {
 
     it('navigates to SingleConnect when Connect Anyway is pressed on TrustSignalModal', async () => {
       mockUseOriginTrustSignals.mockReturnValue({
-        state: TrustSignalDisplayState.Warning,
-        label: 'Suspicious site',
+        state: TrustSignalDisplayState.Malicious,
+        label: 'Known malicious site',
       });
 
       const { getByTestId, findByTestId } = renderWithProvider(
@@ -1529,8 +1529,8 @@ describe('AccountConnect', () => {
 
     it('cancels permission request when Close is pressed on TrustSignalModal', () => {
       mockUseOriginTrustSignals.mockReturnValue({
-        state: TrustSignalDisplayState.Warning,
-        label: 'Suspicious site',
+        state: TrustSignalDisplayState.Malicious,
+        label: 'Known malicious site',
       });
 
       const { getByTestId } = renderWithProvider(

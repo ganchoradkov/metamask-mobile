@@ -1444,9 +1444,7 @@ describe('AccountConnect', () => {
       );
 
       // TrustSignalModal should be visible
-      expect(
-        getByTestId(TrustSignalModalSelectorsIDs.CONTAINER),
-      ).toBeDefined();
+      expect(getByTestId(TrustSignalModalSelectorsIDs.CONTAINER)).toBeDefined();
       // PermissionsSummary should NOT be visible
       expect(queryByTestId('permission-summary-container')).toBeNull();
     });
@@ -1463,9 +1461,7 @@ describe('AccountConnect', () => {
       );
 
       // TrustSignalModal should be visible
-      expect(
-        getByTestId(TrustSignalModalSelectorsIDs.CONTAINER),
-      ).toBeDefined();
+      expect(getByTestId(TrustSignalModalSelectorsIDs.CONTAINER)).toBeDefined();
       // PermissionsSummary should NOT be visible
       expect(queryByTestId('permission-summary-container')).toBeNull();
     });
@@ -1484,9 +1480,7 @@ describe('AccountConnect', () => {
       // PermissionsSummary should be visible
       expect(getByTestId('permission-summary-container')).toBeDefined();
       // TrustSignalModal should NOT be visible
-      expect(
-        queryByTestId(TrustSignalModalSelectorsIDs.CONTAINER),
-      ).toBeNull();
+      expect(queryByTestId(TrustSignalModalSelectorsIDs.CONTAINER)).toBeNull();
     });
 
     it('renders PermissionsSummary (SingleConnect) when trust signal state is Verified', () => {
@@ -1503,9 +1497,7 @@ describe('AccountConnect', () => {
       // PermissionsSummary should be visible
       expect(getByTestId('permission-summary-container')).toBeDefined();
       // TrustSignalModal should NOT be visible
-      expect(
-        queryByTestId(TrustSignalModalSelectorsIDs.CONTAINER),
-      ).toBeNull();
+      expect(queryByTestId(TrustSignalModalSelectorsIDs.CONTAINER)).toBeNull();
     });
 
     it('navigates to SingleConnect when Connect Anyway is pressed on TrustSignalModal', async () => {
@@ -1520,9 +1512,7 @@ describe('AccountConnect', () => {
       );
 
       // Verify TrustSignalModal is shown
-      expect(
-        getByTestId(TrustSignalModalSelectorsIDs.CONTAINER),
-      ).toBeDefined();
+      expect(getByTestId(TrustSignalModalSelectorsIDs.CONTAINER)).toBeDefined();
 
       // Press Connect Anyway
       const connectAnywayButton = getByTestId(

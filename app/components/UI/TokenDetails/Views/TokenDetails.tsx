@@ -138,6 +138,7 @@ const TokenDetails: React.FC<{
     ///: BEGIN:ONLY_INCLUDE_IF(tron)
     isTronNative,
     stakedTrxAsset,
+    readyForWithdrawalTrxAsset,
     ///: END:ONLY_INCLUDE_IF
   } = useTokenBalance(token);
 
@@ -210,6 +211,7 @@ const TokenDetails: React.FC<{
         ///: BEGIN:ONLY_INCLUDE_IF(tron)
         isTronNative={isTronNative}
         stakedTrxAsset={stakedTrxAsset}
+        readyForWithdrawalTrxAsset={readyForWithdrawalTrxAsset}
         ///: END:ONLY_INCLUDE_IF
       />
       <ActivityHeader

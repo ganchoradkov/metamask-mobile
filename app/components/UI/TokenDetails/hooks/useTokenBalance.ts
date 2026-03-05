@@ -11,6 +11,7 @@ import {
 import { toFormattedAddress } from '../../../../util/address';
 ///: BEGIN:ONLY_INCLUDE_IF(tron)
 import { createStakedTrxAsset } from '../../AssetOverview/utils/createStakedTrxAsset';
+import { createReadyForWithdrawalTrxAsset } from '../../AssetOverview/utils/createTronDerivedAsset';
 ///: END:ONLY_INCLUDE_IF
 
 export interface UseTokenBalanceResult {
@@ -20,6 +21,7 @@ export interface UseTokenBalanceResult {
   ///: BEGIN:ONLY_INCLUDE_IF(tron)
   isTronNative: boolean;
   stakedTrxAsset: TokenI | undefined;
+  readyForWithdrawalTrxAsset: TokenI | undefined;
   ///: END:ONLY_INCLUDE_IF
 }
 
@@ -33,9 +35,8 @@ export const useTokenBalance = (token: TokenI): UseTokenBalanceResult => {
   );
 
   ///: BEGIN:ONLY_INCLUDE_IF(tron)
-  const { stakedTrxForEnergy, stakedTrxForBandwidth } = useSelector(
-    selectTronSpecialAssetsBySelectedAccountGroup,
-  );
+  const { stakedTrxForEnergy, stakedTrxForBandwidth, trxReadyForWithdrawal } =
+    useSelector(selectTronSpecialAssetsBySelectedAccountGroup);
 
   const isTronNative =
     token.ticker === 'TRX' && String(token.chainId).startsWith('tron:');
@@ -47,6 +48,11 @@ export const useTokenBalance = (token: TokenI): UseTokenBalanceResult => {
         stakedTrxForBandwidth?.balance,
       )
     : undefined;
+
+  const readyForWithdrawalTrxAsset =
+    isTronNative && trxReadyForWithdrawal
+      ? createReadyForWithdrawalTrxAsset(token, trxReadyForWithdrawal.balance)
+      : undefined;
   ///: END:ONLY_INCLUDE_IF
 
   const balance = processedAsset?.balance;
@@ -60,6 +66,7 @@ export const useTokenBalance = (token: TokenI): UseTokenBalanceResult => {
     ///: BEGIN:ONLY_INCLUDE_IF(tron)
     isTronNative,
     stakedTrxAsset,
+    readyForWithdrawalTrxAsset,
     ///: END:ONLY_INCLUDE_IF
   };
 };

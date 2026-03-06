@@ -6,16 +6,15 @@ import { fireEvent, render } from '@testing-library/react-native';
 import type { OnChainRawNotification } from '@metamask/notification-services-controller/notification-services';
 import { strings } from '../../../../../../locales/i18n';
 import BlockExplorerFooter from './BlockExplorerFooter';
-import {
-  MetaMetricsEvents,
-  useMetrics,
-} from '../../../../../components/hooks/useMetrics';
+import { useAnalytics } from '../../../../hooks/useAnalytics/useAnalytics';
+import { createMockUseAnalyticsHook } from '../../../../../util/test/analyticsMock';
+import { MetaMetricsEvents } from '../../../../../core/Analytics';
 import { ModalFooterType } from '../../../../../util/notifications/constants/config';
 import {
   MOCK_ON_CHAIN_NOTIFICATIONS,
   MOCK_FEATURE_ANNOUNCEMENT_NOTIFICATIONS,
 } from '../../../../UI/Notification/__mocks__/mock_notifications';
-import { MetricsEventBuilder } from '../../../../../core/Analytics/MetricsEventBuilder';
+import { AnalyticsEventBuilder } from '../../../../../util/analytics/AnalyticsEventBuilder';
 import { getNetworkDetailsFromNotifPayload } from '../../../../../util/notifications';
 
 jest.mock('react-native/Libraries/Linking/Linking', () => ({
@@ -29,23 +28,11 @@ jest.mock('../../../../../util/notifications', () => ({
   getNetworkDetailsFromNotifPayload: jest.fn(),
 }));
 
-jest.mock('../../../../../components/hooks/useMetrics');
+jest.mock('../../../../hooks/useAnalytics/useAnalytics', () => ({
+  useAnalytics: jest.fn(),
+}));
 
 const trackEventMock = jest.fn();
-
-(useMetrics as jest.MockedFn<typeof useMetrics>).mockReturnValue({
-  trackEvent: trackEventMock,
-  createEventBuilder: MetricsEventBuilder.createEventBuilder,
-  enable: jest.fn(),
-  addTraitsToUser: jest.fn(),
-  createDataDeletionTask: jest.fn(),
-  checkDataDeleteStatus: jest.fn(),
-  getDeleteRegulationCreationDate: jest.fn(),
-  getDeleteRegulationId: jest.fn(),
-  isDataRecorded: jest.fn(),
-  isEnabled: jest.fn(),
-  getMetaMetricsId: jest.fn(),
-});
 
 jest.mock('react-native/Libraries/Linking/Linking', () => ({
   openURL: jest.fn(),
@@ -54,6 +41,14 @@ jest.mock('react-native/Libraries/Linking/Linking', () => ({
 describe('BlockExplorerFooter', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    jest.mocked(useAnalytics).mockReturnValue(
+      createMockUseAnalyticsHook({
+        trackEvent: trackEventMock,
+        // The real builder is needed so build() produces the correct event shape
+        // for assertions on trackEvent call arguments.
+        createEventBuilder: AnalyticsEventBuilder.createEventBuilder,
+      }),
+    );
   });
 
   it('returns null when no URL is available', () => {
@@ -106,7 +101,7 @@ describe('BlockExplorerFooter', () => {
 
     expect(Linking.openURL).toHaveBeenCalled();
     expect(trackEventMock).toHaveBeenCalledWith(
-      MetricsEventBuilder.createEventBuilder(
+      AnalyticsEventBuilder.createEventBuilder(
         MetaMetricsEvents.NOTIFICATION_DETAIL_CLICKED,
       )
         .addProperties({

@@ -10,7 +10,7 @@ import Logger from '../../../../util/Logger';
 import Routes from '../../../../constants/navigation/Routes';
 import { MetaMetricsEvents } from '../../../../core/Analytics';
 import { getDecimalChainId } from '../../../../util/networks';
-import { useMetrics } from '../../../hooks/useMetrics';
+import { useAnalytics } from '../../../hooks/useAnalytics/useAnalytics';
 import {
   trackActionButtonClick,
   ActionButtonType,
@@ -132,7 +132,7 @@ export const useTokenActions = ({
   const userAssetsMap = useSelector(selectAssetsBySelectedAccountGroup);
 
   // Metrics
-  const { trackEvent, createEventBuilder } = useMetrics();
+  const { trackEvent, createEventBuilder } = useAnalytics();
 
   // Navigation hooks
   const { navigateToSendPage } = useSendNavigation();
@@ -176,10 +176,11 @@ export const useTokenActions = ({
       location: ActionLocation.ASSET_DETAILS,
     });
 
-    const accountForChain =
-      isNonEvmToken && token.chainId
-        ? getAccountByScope(token.chainId as CaipChainId)
-        : selectedInternalAccount;
+    const accountForChain = token.chainId
+      ? (getAccountByScope(
+          formatChainIdToCaip(token.chainId as Hex) as CaipChainId,
+        ) ?? selectedInternalAccount)
+      : selectedInternalAccount;
 
     const addressForChain = accountForChain?.address;
 
@@ -309,7 +310,7 @@ export const useTokenActions = ({
     trackEvent(
       createEventBuilder(MetaMetricsEvents.RAMPS_BUTTON_CLICKED)
         .addProperties({
-          text: 'Buy',
+          button_text: 'Buy',
           location: 'TokenDetails',
           chain_id_destination: getDecimalChainId(chainId),
           ramp_type: rampUnifiedV1Enabled ? 'UNIFIED_BUY' : 'BUY',

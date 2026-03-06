@@ -82,6 +82,7 @@ const createMockInitMessenger = (
         },
       },
     }),
+    subscribe: jest.fn(),
   } as unknown as RampsControllerInitMessenger;
 };
 
@@ -152,18 +153,6 @@ describe('ramps controller init', () => {
         isLoading: false,
         error: null,
       },
-      quotes: {
-        data: null,
-        selected: null,
-        isLoading: false,
-        error: null,
-      },
-      widgetUrl: {
-        data: null,
-        selected: null,
-        isLoading: false,
-        error: null,
-      },
       requests: {},
       nativeProviders: {
         transak: {
@@ -188,6 +177,7 @@ describe('ramps controller init', () => {
           },
         },
       },
+      orders: [],
     };
 
     initRequestMock.persistedState = {

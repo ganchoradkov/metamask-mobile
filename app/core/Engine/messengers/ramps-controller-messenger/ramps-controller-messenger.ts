@@ -1,4 +1,7 @@
-import { RampsControllerMessenger } from '@metamask/ramps-controller';
+import {
+  RampsControllerMessenger,
+  type RampsControllerOrderStatusChangedEvent,
+} from '@metamask/ramps-controller';
 import {
   Messenger,
   MessengerActions,
@@ -40,6 +43,8 @@ export function getRampsControllerMessenger(
       'RampsService:getPaymentMethods',
       'RampsService:getQuotes',
       'RampsService:getBuyWidgetUrl',
+      'RampsService:getOrder',
+      'RampsService:getOrderFromCallback',
       'TransakService:setApiKey',
       'TransakService:setAccessToken',
       'TransakService:clearAccessToken',
@@ -86,7 +91,7 @@ export function getRampsControllerInitMessenger(rootMessenger: RootMessenger) {
   const messenger = new Messenger<
     'RampsControllerInit',
     RemoteFeatureFlagControllerGetStateAction,
-    never,
+    RampsControllerOrderStatusChangedEvent,
     RootMessenger
   >({
     namespace: 'RampsControllerInit',
@@ -95,7 +100,7 @@ export function getRampsControllerInitMessenger(rootMessenger: RootMessenger) {
 
   rootMessenger.delegate({
     actions: ['RemoteFeatureFlagController:getState'],
-    events: [],
+    events: ['RampsController:orderStatusChanged'],
     messenger,
   });
 

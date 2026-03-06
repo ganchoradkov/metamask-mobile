@@ -84,7 +84,7 @@ exports[`SocialLoginIosUser SocialLoginSuccessExistingUser renders match snapsho
         accessibilityRole="text"
         style={
           {
-            "color": "#121314",
+            "color": "#131416",
             "fontFamily": "Geist-Bold",
             "fontSize": 32,
             "letterSpacing": 0,
@@ -117,7 +117,7 @@ exports[`SocialLoginIosUser SocialLoginSuccessExistingUser renders match snapsho
           {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#121314",
+            "backgroundColor": "#131416",
             "borderRadius": 12,
             "flexDirection": "row",
             "height": 48,
@@ -232,7 +232,7 @@ exports[`SocialLoginIosUser SocialLoginSuccessExistingUser renders match snapsho
         accessibilityRole="text"
         style={
           {
-            "color": "#121314",
+            "color": "#131416",
             "fontFamily": "Geist-Bold",
             "fontSize": 32,
             "letterSpacing": 0,
@@ -265,7 +265,7 @@ exports[`SocialLoginIosUser SocialLoginSuccessExistingUser renders match snapsho
           {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#121314",
+            "backgroundColor": "#131416",
             "borderRadius": 12,
             "flexDirection": "row",
             "height": 40,
@@ -380,7 +380,7 @@ exports[`SocialLoginIosUser SocialLoginSuccessNewUser renders match snapshot 1`]
         accessibilityRole="text"
         style={
           {
-            "color": "#121314",
+            "color": "#131416",
             "fontFamily": "Geist-Bold",
             "fontSize": 32,
             "letterSpacing": 0,
@@ -413,7 +413,7 @@ exports[`SocialLoginIosUser SocialLoginSuccessNewUser renders match snapshot 1`]
           {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#121314",
+            "backgroundColor": "#131416",
             "borderRadius": 12,
             "flexDirection": "row",
             "height": 48,
@@ -528,7 +528,7 @@ exports[`SocialLoginIosUser SocialLoginSuccessNewUser renders match snapshot wit
         accessibilityRole="text"
         style={
           {
-            "color": "#121314",
+            "color": "#131416",
             "fontFamily": "Geist-Bold",
             "fontSize": 32,
             "letterSpacing": 0,
@@ -561,7 +561,7 @@ exports[`SocialLoginIosUser SocialLoginSuccessNewUser renders match snapshot wit
           {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#121314",
+            "backgroundColor": "#131416",
             "borderRadius": 12,
             "flexDirection": "row",
             "height": 40,

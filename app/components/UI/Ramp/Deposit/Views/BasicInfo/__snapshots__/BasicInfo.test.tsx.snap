@@ -59,8 +59,47 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
               onLayout={[Function]}
             >
               <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": false,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "height": 32,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": 32,
+                    },
+                    undefined,
                     {
                       "transform": [
                         {
@@ -68,74 +107,24 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                         },
                       ],
                     },
-                    {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
                   ]
                 }
+                testID="deposit-back-navbar-button"
               >
-                <View
-                  accessibilityState={
-                    {
-                      "busy": undefined,
-                      "checked": undefined,
-                      "disabled": false,
-                      "expanded": undefined,
-                      "selected": undefined,
-                    }
-                  }
-                  accessibilityValue={
-                    {
-                      "max": undefined,
-                      "min": undefined,
-                      "now": undefined,
-                      "text": undefined,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
+                <SvgMock
+                  fill="currentColor"
+                  name="ArrowLeft"
                   style={
                     [
                       {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": 8,
-                        "height": 32,
-                        "justifyContent": "center",
-                        "opacity": 1,
-                        "width": 32,
+                        "color": "#131416",
+                        "height": 24,
+                        "width": 24,
                       },
                       undefined,
                     ]
                   }
-                  testID="deposit-back-navbar-button"
-                >
-                  <SvgMock
-                    fill="currentColor"
-                    name="ArrowLeft"
-                    style={
-                      [
-                        {
-                          "color": "#121314",
-                          "height": 24,
-                          "width": 24,
-                        },
-                        undefined,
-                      ]
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -169,7 +158,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                 style={
                   [
                     {
-                      "color": "#121314",
+                      "color": "#131416",
                       "fontFamily": "Geist-Bold",
                       "fontSize": 16,
                       "fontWeight": 400,
@@ -534,7 +523,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                             "height": 4,
                                           },
                                           {
-                                            "backgroundColor": "#b7bbc8",
+                                            "backgroundColor": "#babbbe",
                                           },
                                         ],
                                         undefined,
@@ -547,9 +536,9 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#121314",
+                                      "color": "#131416",
                                       "fontFamily": "Geist-Bold",
-                                      "fontSize": 18,
+                                      "fontSize": 20,
                                       "letterSpacing": 0,
                                       "lineHeight": 24,
                                       "marginBottom": 4,
@@ -563,7 +552,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#686e7d",
+                                      "color": "#66676a",
                                       "fontFamily": "Geist-Regular",
                                       "fontSize": 16,
                                       "letterSpacing": 0,
@@ -600,7 +589,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -645,8 +634,8 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -677,14 +666,14 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="First name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -717,7 +706,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -762,8 +751,8 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -794,14 +783,14 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="Last name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -833,7 +822,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -878,8 +867,8 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -913,7 +902,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "letterSpacing": 0,
@@ -927,7 +916,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#b7bbc8",
+                                              "color": "#babbbe",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 14,
                                               "letterSpacing": 0,
@@ -960,13 +949,13 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="(555) 123-4567"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         style={
                                           {
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
@@ -997,7 +986,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -1042,8 +1031,8 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -1063,7 +1052,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                       testID="textfield-startacccessory"
                                     >
                                       <SvgMock
-                                        color="#121314"
+                                        color="#131416"
                                         fill="currentColor"
                                         height={20}
                                         name="Calendar"
@@ -1096,11 +1085,11 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                         <TextInput
                                           editable={false}
                                           placeholder="01/01/2000"
-                                          placeholderTextColor="#b7bbc8"
+                                          placeholderTextColor="#babbbe"
                                           pointerEvents="none"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "flex": 1,
                                               "fontSize": 16,
                                               "height": "100%",
@@ -1145,7 +1134,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                         accessibilityRole="text"
                                         style={
                                           {
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "letterSpacing": 0,
@@ -1160,7 +1149,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                         testID="ssn-info-button"
                                       >
                                         <SvgMock
-                                          color="#686e7d"
+                                          color="#66676a"
                                           fill="currentColor"
                                           height={16}
                                           name="Info"
@@ -1208,8 +1197,8 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -1241,7 +1230,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="XXX-XX-XXXX"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         returnKeyType="done"
                                         secureTextEntry={true}
                                         style={
@@ -1249,7 +1238,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
@@ -1289,7 +1278,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                               accessible={true}
                               style={
                                 {
-                                  "backgroundColor": "#3c4d9d0f",
+                                  "backgroundColor": "#b4b4b528",
                                   "borderRadius": 8,
                                   "marginVertical": 8,
                                   "padding": 16,
@@ -1314,7 +1303,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                   testID="listitemcolumn"
                                 >
                                   <SvgMock
-                                    color="#686e7d"
+                                    color="#66676a"
                                     fill="currentColor"
                                     height={24}
                                     name="SecurityKey"
@@ -1348,7 +1337,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -1362,7 +1351,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -1388,7 +1377,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                                 {
                                   "alignItems": "center",
                                   "alignSelf": "stretch",
-                                  "backgroundColor": "#121314",
+                                  "backgroundColor": "#131416",
                                   "borderRadius": 12,
                                   "flexDirection": "row",
                                   "height": 48,
@@ -1419,7 +1408,7 @@ exports[`BasicInfo Component navigates to address page when form is valid and co
                               name="powered-by-transak-logo"
                               style={
                                 {
-                                  "color": "#686e7d",
+                                  "color": "#66676a",
                                   "height": 24,
                                 }
                               }
@@ -1499,8 +1488,47 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
               onLayout={[Function]}
             >
               <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": false,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "height": 32,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": 32,
+                    },
+                    undefined,
                     {
                       "transform": [
                         {
@@ -1508,74 +1536,24 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                         },
                       ],
                     },
-                    {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
                   ]
                 }
+                testID="deposit-back-navbar-button"
               >
-                <View
-                  accessibilityState={
-                    {
-                      "busy": undefined,
-                      "checked": undefined,
-                      "disabled": false,
-                      "expanded": undefined,
-                      "selected": undefined,
-                    }
-                  }
-                  accessibilityValue={
-                    {
-                      "max": undefined,
-                      "min": undefined,
-                      "now": undefined,
-                      "text": undefined,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
+                <SvgMock
+                  fill="currentColor"
+                  name="ArrowLeft"
                   style={
                     [
                       {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": 8,
-                        "height": 32,
-                        "justifyContent": "center",
-                        "opacity": 1,
-                        "width": 32,
+                        "color": "#131416",
+                        "height": 24,
+                        "width": 24,
                       },
                       undefined,
                     ]
                   }
-                  testID="deposit-back-navbar-button"
-                >
-                  <SvgMock
-                    fill="currentColor"
-                    name="ArrowLeft"
-                    style={
-                      [
-                        {
-                          "color": "#121314",
-                          "height": 24,
-                          "width": 24,
-                        },
-                        undefined,
-                      ]
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -1609,7 +1587,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                 style={
                   [
                     {
-                      "color": "#121314",
+                      "color": "#131416",
                       "fontFamily": "Geist-Bold",
                       "fontSize": 16,
                       "fontWeight": 400,
@@ -1974,7 +1952,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                             "height": 4,
                                           },
                                           {
-                                            "backgroundColor": "#b7bbc8",
+                                            "backgroundColor": "#babbbe",
                                           },
                                         ],
                                         undefined,
@@ -1987,9 +1965,9 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#121314",
+                                      "color": "#131416",
                                       "fontFamily": "Geist-Bold",
-                                      "fontSize": 18,
+                                      "fontSize": 20,
                                       "letterSpacing": 0,
                                       "lineHeight": 24,
                                       "marginBottom": 4,
@@ -2003,7 +1981,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#686e7d",
+                                      "color": "#66676a",
                                       "fontFamily": "Geist-Regular",
                                       "fontSize": 16,
                                       "letterSpacing": 0,
@@ -2040,7 +2018,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -2085,8 +2063,8 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -2117,14 +2095,14 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="First name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -2157,7 +2135,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -2202,8 +2180,8 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -2234,14 +2212,14 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="Last name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -2273,7 +2251,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -2318,8 +2296,8 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -2353,7 +2331,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "letterSpacing": 0,
@@ -2367,7 +2345,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#b7bbc8",
+                                              "color": "#babbbe",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 14,
                                               "letterSpacing": 0,
@@ -2400,13 +2378,13 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="(555) 123-4567"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         style={
                                           {
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
@@ -2437,7 +2415,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -2482,8 +2460,8 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -2503,7 +2481,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                       testID="textfield-startacccessory"
                                     >
                                       <SvgMock
-                                        color="#121314"
+                                        color="#131416"
                                         fill="currentColor"
                                         height={20}
                                         name="Calendar"
@@ -2536,11 +2514,11 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                         <TextInput
                                           editable={false}
                                           placeholder="01/01/2000"
-                                          placeholderTextColor="#b7bbc8"
+                                          placeholderTextColor="#babbbe"
                                           pointerEvents="none"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "flex": 1,
                                               "fontSize": 16,
                                               "height": "100%",
@@ -2585,7 +2563,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                         accessibilityRole="text"
                                         style={
                                           {
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "letterSpacing": 0,
@@ -2600,7 +2578,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                         testID="ssn-info-button"
                                       >
                                         <SvgMock
-                                          color="#686e7d"
+                                          color="#66676a"
                                           fill="currentColor"
                                           height={16}
                                           name="Info"
@@ -2648,8 +2626,8 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -2681,7 +2659,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="XXX-XX-XXXX"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         returnKeyType="done"
                                         secureTextEntry={true}
                                         style={
@@ -2689,12 +2667,13 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
                                             "height": 46,
                                             "letterSpacing": 0,
+                                            "lineHeight": 0,
                                             "opacity": 1,
                                           }
                                         }
@@ -2729,7 +2708,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                               accessible={true}
                               style={
                                 {
-                                  "backgroundColor": "#3c4d9d0f",
+                                  "backgroundColor": "#b4b4b528",
                                   "borderRadius": 8,
                                   "marginVertical": 8,
                                   "padding": 16,
@@ -2754,7 +2733,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                   testID="listitemcolumn"
                                 >
                                   <SvgMock
-                                    color="#686e7d"
+                                    color="#66676a"
                                     fill="currentColor"
                                     height={24}
                                     name="SecurityKey"
@@ -2788,7 +2767,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -2802,7 +2781,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -2828,7 +2807,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                                 {
                                   "alignItems": "center",
                                   "alignSelf": "stretch",
-                                  "backgroundColor": "#121314",
+                                  "backgroundColor": "#131416",
                                   "borderRadius": 12,
                                   "flexDirection": "row",
                                   "height": 48,
@@ -2859,7 +2838,7 @@ exports[`BasicInfo Component passes regions to DepositPhoneField component 1`] =
                               name="powered-by-transak-logo"
                               style={
                                 {
-                                  "color": "#686e7d",
+                                  "color": "#66676a",
                                   "height": 24,
                                 }
                               }
@@ -2939,8 +2918,47 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
               onLayout={[Function]}
             >
               <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": false,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "height": 32,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": 32,
+                    },
+                    undefined,
                     {
                       "transform": [
                         {
@@ -2948,74 +2966,24 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                         },
                       ],
                     },
-                    {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
                   ]
                 }
+                testID="deposit-back-navbar-button"
               >
-                <View
-                  accessibilityState={
-                    {
-                      "busy": undefined,
-                      "checked": undefined,
-                      "disabled": false,
-                      "expanded": undefined,
-                      "selected": undefined,
-                    }
-                  }
-                  accessibilityValue={
-                    {
-                      "max": undefined,
-                      "min": undefined,
-                      "now": undefined,
-                      "text": undefined,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
+                <SvgMock
+                  fill="currentColor"
+                  name="ArrowLeft"
                   style={
                     [
                       {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": 8,
-                        "height": 32,
-                        "justifyContent": "center",
-                        "opacity": 1,
-                        "width": 32,
+                        "color": "#131416",
+                        "height": 24,
+                        "width": 24,
                       },
                       undefined,
                     ]
                   }
-                  testID="deposit-back-navbar-button"
-                >
-                  <SvgMock
-                    fill="currentColor"
-                    name="ArrowLeft"
-                    style={
-                      [
-                        {
-                          "color": "#121314",
-                          "height": 24,
-                          "width": 24,
-                        },
-                        undefined,
-                      ]
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -3049,7 +3017,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                 style={
                   [
                     {
-                      "color": "#121314",
+                      "color": "#131416",
                       "fontFamily": "Geist-Bold",
                       "fontSize": 16,
                       "fontWeight": 400,
@@ -3414,7 +3382,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                             "height": 4,
                                           },
                                           {
-                                            "backgroundColor": "#b7bbc8",
+                                            "backgroundColor": "#babbbe",
                                           },
                                         ],
                                         undefined,
@@ -3427,9 +3395,9 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#121314",
+                                      "color": "#131416",
                                       "fontFamily": "Geist-Bold",
-                                      "fontSize": 18,
+                                      "fontSize": 20,
                                       "letterSpacing": 0,
                                       "lineHeight": 24,
                                       "marginBottom": 4,
@@ -3443,7 +3411,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#686e7d",
+                                      "color": "#66676a",
                                       "fontFamily": "Geist-Regular",
                                       "fontSize": 16,
                                       "letterSpacing": 0,
@@ -3480,7 +3448,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -3525,8 +3493,8 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -3557,14 +3525,14 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="First name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -3597,7 +3565,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -3642,8 +3610,8 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -3674,14 +3642,14 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="Last name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -3713,7 +3681,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -3758,8 +3726,8 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -3793,7 +3761,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "letterSpacing": 0,
@@ -3807,7 +3775,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#b7bbc8",
+                                              "color": "#babbbe",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 14,
                                               "letterSpacing": 0,
@@ -3840,13 +3808,13 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="(555) 123-4567"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         style={
                                           {
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
@@ -3877,7 +3845,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -3922,8 +3890,8 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -3943,7 +3911,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                       testID="textfield-startacccessory"
                                     >
                                       <SvgMock
-                                        color="#121314"
+                                        color="#131416"
                                         fill="currentColor"
                                         height={20}
                                         name="Calendar"
@@ -3976,11 +3944,11 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                         <TextInput
                                           editable={false}
                                           placeholder="01/01/2000"
-                                          placeholderTextColor="#b7bbc8"
+                                          placeholderTextColor="#babbbe"
                                           pointerEvents="none"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "flex": 1,
                                               "fontSize": 16,
                                               "height": "100%",
@@ -4025,7 +3993,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                         accessibilityRole="text"
                                         style={
                                           {
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "letterSpacing": 0,
@@ -4040,7 +4008,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                         testID="ssn-info-button"
                                       >
                                         <SvgMock
-                                          color="#686e7d"
+                                          color="#66676a"
                                           fill="currentColor"
                                           height={16}
                                           name="Info"
@@ -4088,8 +4056,8 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -4121,7 +4089,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="XXX-XX-XXXX"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         returnKeyType="done"
                                         secureTextEntry={true}
                                         style={
@@ -4129,12 +4097,13 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
                                             "height": 46,
                                             "letterSpacing": 0,
+                                            "lineHeight": 0,
                                             "opacity": 1,
                                           }
                                         }
@@ -4169,7 +4138,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                               accessible={true}
                               style={
                                 {
-                                  "backgroundColor": "#3c4d9d0f",
+                                  "backgroundColor": "#b4b4b528",
                                   "borderRadius": 8,
                                   "marginVertical": 8,
                                   "padding": 16,
@@ -4194,7 +4163,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                   testID="listitemcolumn"
                                 >
                                   <SvgMock
-                                    color="#686e7d"
+                                    color="#66676a"
                                     fill="currentColor"
                                     height={24}
                                     name="SecurityKey"
@@ -4228,7 +4197,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -4242,7 +4211,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -4268,7 +4237,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                                 {
                                   "alignItems": "center",
                                   "alignSelf": "stretch",
-                                  "backgroundColor": "#121314",
+                                  "backgroundColor": "#131416",
                                   "borderRadius": 12,
                                   "flexDirection": "row",
                                   "height": 48,
@@ -4299,7 +4268,7 @@ exports[`BasicInfo Component prefills form data when previousFormData is provide
                               name="powered-by-transak-logo"
                               style={
                                 {
-                                  "color": "#686e7d",
+                                  "color": "#66676a",
                                   "height": 24,
                                 }
                               }
@@ -4379,8 +4348,47 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
               onLayout={[Function]}
             >
               <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": false,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "height": 32,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": 32,
+                    },
+                    undefined,
                     {
                       "transform": [
                         {
@@ -4388,74 +4396,24 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                         },
                       ],
                     },
-                    {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
                   ]
                 }
+                testID="deposit-back-navbar-button"
               >
-                <View
-                  accessibilityState={
-                    {
-                      "busy": undefined,
-                      "checked": undefined,
-                      "disabled": false,
-                      "expanded": undefined,
-                      "selected": undefined,
-                    }
-                  }
-                  accessibilityValue={
-                    {
-                      "max": undefined,
-                      "min": undefined,
-                      "now": undefined,
-                      "text": undefined,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
+                <SvgMock
+                  fill="currentColor"
+                  name="ArrowLeft"
                   style={
                     [
                       {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": 8,
-                        "height": 32,
-                        "justifyContent": "center",
-                        "opacity": 1,
-                        "width": 32,
+                        "color": "#131416",
+                        "height": 24,
+                        "width": 24,
                       },
                       undefined,
                     ]
                   }
-                  testID="deposit-back-navbar-button"
-                >
-                  <SvgMock
-                    fill="currentColor"
-                    name="ArrowLeft"
-                    style={
-                      [
-                        {
-                          "color": "#121314",
-                          "height": 24,
-                          "width": 24,
-                        },
-                        undefined,
-                      ]
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -4489,7 +4447,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "#121314",
+                      "color": "#131416",
                       "fontFamily": "Geist-Bold",
                       "fontSize": 16,
                       "fontWeight": 400,
@@ -4854,7 +4812,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                             "height": 4,
                                           },
                                           {
-                                            "backgroundColor": "#b7bbc8",
+                                            "backgroundColor": "#babbbe",
                                           },
                                         ],
                                         undefined,
@@ -4867,9 +4825,9 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#121314",
+                                      "color": "#131416",
                                       "fontFamily": "Geist-Bold",
-                                      "fontSize": 18,
+                                      "fontSize": 20,
                                       "letterSpacing": 0,
                                       "lineHeight": 24,
                                       "marginBottom": 4,
@@ -4883,7 +4841,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#686e7d",
+                                      "color": "#66676a",
                                       "fontFamily": "Geist-Regular",
                                       "fontSize": 16,
                                       "letterSpacing": 0,
@@ -4920,7 +4878,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -4965,8 +4923,8 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -4997,19 +4955,20 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="First name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
                                               "height": 46,
                                               "letterSpacing": 0,
+                                              "lineHeight": 0,
                                               "opacity": 1,
                                             }
                                           }
@@ -5037,7 +4996,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -5082,8 +5041,8 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -5114,19 +5073,20 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="Last name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
                                               "height": 46,
                                               "letterSpacing": 0,
+                                              "lineHeight": 0,
                                               "opacity": 1,
                                             }
                                           }
@@ -5153,7 +5113,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -5198,8 +5158,8 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -5233,7 +5193,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "letterSpacing": 0,
@@ -5247,7 +5207,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#b7bbc8",
+                                              "color": "#babbbe",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 14,
                                               "letterSpacing": 0,
@@ -5280,18 +5240,19 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="(555) 123-4567"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         style={
                                           {
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
                                             "height": 46,
                                             "letterSpacing": 0,
+                                            "lineHeight": 0,
                                             "opacity": 1,
                                           }
                                         }
@@ -5317,7 +5278,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -5362,8 +5323,8 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -5383,7 +5344,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                       testID="textfield-startacccessory"
                                     >
                                       <SvgMock
-                                        color="#121314"
+                                        color="#131416"
                                         fill="currentColor"
                                         height={20}
                                         name="Calendar"
@@ -5416,11 +5377,11 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                         <TextInput
                                           editable={false}
                                           placeholder="01/01/2000"
-                                          placeholderTextColor="#b7bbc8"
+                                          placeholderTextColor="#babbbe"
                                           pointerEvents="none"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "flex": 1,
                                               "fontSize": 16,
                                               "height": "100%",
@@ -5465,7 +5426,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                         accessibilityRole="text"
                                         style={
                                           {
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "letterSpacing": 0,
@@ -5480,7 +5441,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                         testID="ssn-info-button"
                                       >
                                         <SvgMock
-                                          color="#686e7d"
+                                          color="#66676a"
                                           fill="currentColor"
                                           height={16}
                                           name="Info"
@@ -5528,8 +5489,8 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -5561,7 +5522,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="XXX-XX-XXXX"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         returnKeyType="done"
                                         secureTextEntry={true}
                                         style={
@@ -5569,12 +5530,13 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
                                             "height": 46,
                                             "letterSpacing": 0,
+                                            "lineHeight": 0,
                                             "opacity": 1,
                                           }
                                         }
@@ -5609,7 +5571,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                               accessible={true}
                               style={
                                 {
-                                  "backgroundColor": "#3c4d9d0f",
+                                  "backgroundColor": "#b4b4b528",
                                   "borderRadius": 8,
                                   "marginVertical": 8,
                                   "padding": 16,
@@ -5634,7 +5596,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                   testID="listitemcolumn"
                                 >
                                   <SvgMock
-                                    color="#686e7d"
+                                    color="#66676a"
                                     fill="currentColor"
                                     height={24}
                                     name="SecurityKey"
@@ -5668,7 +5630,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -5682,7 +5644,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -5708,7 +5670,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                                 {
                                   "alignItems": "center",
                                   "alignSelf": "stretch",
-                                  "backgroundColor": "#121314",
+                                  "backgroundColor": "#131416",
                                   "borderRadius": 12,
                                   "flexDirection": "row",
                                   "height": 48,
@@ -5739,7 +5701,7 @@ exports[`BasicInfo Component render matches snapshot 1`] = `
                               name="powered-by-transak-logo"
                               style={
                                 {
-                                  "color": "#686e7d",
+                                  "color": "#66676a",
                                   "height": 24,
                                 }
                               }
@@ -5819,8 +5781,47 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
               onLayout={[Function]}
             >
               <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": false,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "height": 32,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": 32,
+                    },
+                    undefined,
                     {
                       "transform": [
                         {
@@ -5828,74 +5829,24 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                         },
                       ],
                     },
-                    {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
                   ]
                 }
+                testID="deposit-back-navbar-button"
               >
-                <View
-                  accessibilityState={
-                    {
-                      "busy": undefined,
-                      "checked": undefined,
-                      "disabled": false,
-                      "expanded": undefined,
-                      "selected": undefined,
-                    }
-                  }
-                  accessibilityValue={
-                    {
-                      "max": undefined,
-                      "min": undefined,
-                      "now": undefined,
-                      "text": undefined,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
+                <SvgMock
+                  fill="currentColor"
+                  name="ArrowLeft"
                   style={
                     [
                       {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": 8,
-                        "height": 32,
-                        "justifyContent": "center",
-                        "opacity": 1,
-                        "width": 32,
+                        "color": "#131416",
+                        "height": 24,
+                        "width": 24,
                       },
                       undefined,
                     ]
                   }
-                  testID="deposit-back-navbar-button"
-                >
-                  <SvgMock
-                    fill="currentColor"
-                    name="ArrowLeft"
-                    style={
-                      [
-                        {
-                          "color": "#121314",
-                          "height": 24,
-                          "width": 24,
-                        },
-                        undefined,
-                      ]
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -5929,7 +5880,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                 style={
                   [
                     {
-                      "color": "#121314",
+                      "color": "#131416",
                       "fontFamily": "Geist-Bold",
                       "fontSize": 16,
                       "fontWeight": 400,
@@ -6294,7 +6245,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                             "height": 4,
                                           },
                                           {
-                                            "backgroundColor": "#b7bbc8",
+                                            "backgroundColor": "#babbbe",
                                           },
                                         ],
                                         undefined,
@@ -6307,9 +6258,9 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#121314",
+                                      "color": "#131416",
                                       "fontFamily": "Geist-Bold",
-                                      "fontSize": 18,
+                                      "fontSize": 20,
                                       "letterSpacing": 0,
                                       "lineHeight": 24,
                                       "marginBottom": 4,
@@ -6323,7 +6274,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#686e7d",
+                                      "color": "#66676a",
                                       "fontFamily": "Geist-Regular",
                                       "fontSize": 16,
                                       "letterSpacing": 0,
@@ -6360,7 +6311,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -6405,8 +6356,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -6437,19 +6388,20 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="First name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
                                               "height": 46,
                                               "letterSpacing": 0,
+                                              "lineHeight": 0,
                                               "opacity": 1,
                                             }
                                           }
@@ -6492,7 +6444,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -6537,8 +6489,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -6569,19 +6521,20 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="Last name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
                                               "height": 46,
                                               "letterSpacing": 0,
+                                              "lineHeight": 0,
                                               "opacity": 1,
                                             }
                                           }
@@ -6623,7 +6576,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -6668,8 +6621,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -6703,7 +6656,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "letterSpacing": 0,
@@ -6717,7 +6670,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#b7bbc8",
+                                              "color": "#babbbe",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 14,
                                               "letterSpacing": 0,
@@ -6750,18 +6703,19 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="(555) 123-4567"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         style={
                                           {
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
                                             "height": 46,
                                             "letterSpacing": 0,
+                                            "lineHeight": 0,
                                             "opacity": 1,
                                           }
                                         }
@@ -6802,7 +6756,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -6847,8 +6801,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -6868,7 +6822,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       testID="textfield-startacccessory"
                                     >
                                       <SvgMock
-                                        color="#121314"
+                                        color="#131416"
                                         fill="currentColor"
                                         height={20}
                                         name="Calendar"
@@ -6901,11 +6855,11 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         <TextInput
                                           editable={false}
                                           placeholder="01/01/2000"
-                                          placeholderTextColor="#b7bbc8"
+                                          placeholderTextColor="#babbbe"
                                           pointerEvents="none"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "flex": 1,
                                               "fontSize": 16,
                                               "height": "100%",
@@ -6950,7 +6904,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         accessibilityRole="text"
                                         style={
                                           {
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "letterSpacing": 0,
@@ -6965,7 +6919,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         testID="ssn-info-button"
                                       >
                                         <SvgMock
-                                          color="#686e7d"
+                                          color="#66676a"
                                           fill="currentColor"
                                           height={16}
                                           name="Info"
@@ -7013,8 +6967,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -7046,7 +7000,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="XXX-XX-XXXX"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         returnKeyType="done"
                                         secureTextEntry={true}
                                         style={
@@ -7054,12 +7008,13 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
                                             "height": 46,
                                             "letterSpacing": 0,
+                                            "lineHeight": 0,
                                             "opacity": 1,
                                           }
                                         }
@@ -7109,7 +7064,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                               accessible={true}
                               style={
                                 {
-                                  "backgroundColor": "#3c4d9d0f",
+                                  "backgroundColor": "#b4b4b528",
                                   "borderRadius": 8,
                                   "marginVertical": 8,
                                   "padding": 16,
@@ -7134,7 +7089,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   testID="listitemcolumn"
                                 >
                                   <SvgMock
-                                    color="#686e7d"
+                                    color="#66676a"
                                     fill="currentColor"
                                     height={24}
                                     name="SecurityKey"
@@ -7168,7 +7123,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -7182,7 +7137,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -7208,7 +7163,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                 {
                                   "alignItems": "center",
                                   "alignSelf": "stretch",
-                                  "backgroundColor": "#121314",
+                                  "backgroundColor": "#131416",
                                   "borderRadius": 12,
                                   "flexDirection": "row",
                                   "height": 48,
@@ -7239,7 +7194,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                               name="powered-by-transak-logo"
                               style={
                                 {
-                                  "color": "#686e7d",
+                                  "color": "#66676a",
                                   "height": 24,
                                 }
                               }
@@ -7319,8 +7274,47 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
               onLayout={[Function]}
             >
               <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": false,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "height": 32,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": 32,
+                    },
+                    undefined,
                     {
                       "transform": [
                         {
@@ -7328,74 +7322,24 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                         },
                       ],
                     },
-                    {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
                   ]
                 }
+                testID="deposit-back-navbar-button"
               >
-                <View
-                  accessibilityState={
-                    {
-                      "busy": undefined,
-                      "checked": undefined,
-                      "disabled": false,
-                      "expanded": undefined,
-                      "selected": undefined,
-                    }
-                  }
-                  accessibilityValue={
-                    {
-                      "max": undefined,
-                      "min": undefined,
-                      "now": undefined,
-                      "text": undefined,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
+                <SvgMock
+                  fill="currentColor"
+                  name="ArrowLeft"
                   style={
                     [
                       {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": 8,
-                        "height": 32,
-                        "justifyContent": "center",
-                        "opacity": 1,
-                        "width": 32,
+                        "color": "#131416",
+                        "height": 24,
+                        "width": 24,
                       },
                       undefined,
                     ]
                   }
-                  testID="deposit-back-navbar-button"
-                >
-                  <SvgMock
-                    fill="currentColor"
-                    name="ArrowLeft"
-                    style={
-                      [
-                        {
-                          "color": "#121314",
-                          "height": 24,
-                          "width": 24,
-                        },
-                        undefined,
-                      ]
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -7429,7 +7373,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                 style={
                   [
                     {
-                      "color": "#121314",
+                      "color": "#131416",
                       "fontFamily": "Geist-Bold",
                       "fontSize": 16,
                       "fontWeight": 400,
@@ -7794,7 +7738,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                             "height": 4,
                                           },
                                           {
-                                            "backgroundColor": "#b7bbc8",
+                                            "backgroundColor": "#babbbe",
                                           },
                                         ],
                                         undefined,
@@ -7807,9 +7751,9 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#121314",
+                                      "color": "#131416",
                                       "fontFamily": "Geist-Bold",
-                                      "fontSize": 18,
+                                      "fontSize": 20,
                                       "letterSpacing": 0,
                                       "lineHeight": 24,
                                       "marginBottom": 4,
@@ -7823,7 +7767,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#686e7d",
+                                      "color": "#66676a",
                                       "fontFamily": "Geist-Regular",
                                       "fontSize": 16,
                                       "letterSpacing": 0,
@@ -7860,7 +7804,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -7905,8 +7849,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -7937,14 +7881,14 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="First name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -7992,7 +7936,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -8037,8 +7981,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -8069,14 +8013,14 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="Last name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -8123,7 +8067,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -8168,8 +8112,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -8203,7 +8147,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "letterSpacing": 0,
@@ -8217,7 +8161,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#b7bbc8",
+                                              "color": "#babbbe",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 14,
                                               "letterSpacing": 0,
@@ -8250,13 +8194,13 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="(555) 123-4567"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         style={
                                           {
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
@@ -8287,7 +8231,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -8332,8 +8276,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -8353,7 +8297,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       testID="textfield-startacccessory"
                                     >
                                       <SvgMock
-                                        color="#121314"
+                                        color="#131416"
                                         fill="currentColor"
                                         height={20}
                                         name="Calendar"
@@ -8386,11 +8330,11 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         <TextInput
                                           editable={false}
                                           placeholder="01/01/2000"
-                                          placeholderTextColor="#b7bbc8"
+                                          placeholderTextColor="#babbbe"
                                           pointerEvents="none"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "flex": 1,
                                               "fontSize": 16,
                                               "height": "100%",
@@ -8435,7 +8379,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         accessibilityRole="text"
                                         style={
                                           {
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "letterSpacing": 0,
@@ -8450,7 +8394,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         testID="ssn-info-button"
                                       >
                                         <SvgMock
-                                          color="#686e7d"
+                                          color="#66676a"
                                           fill="currentColor"
                                           height={16}
                                           name="Info"
@@ -8498,8 +8442,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -8531,7 +8475,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="XXX-XX-XXXX"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         returnKeyType="done"
                                         secureTextEntry={true}
                                         style={
@@ -8539,12 +8483,13 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
                                             "height": 46,
                                             "letterSpacing": 0,
+                                            "lineHeight": 0,
                                             "opacity": 1,
                                           }
                                         }
@@ -8594,7 +8539,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                               accessible={true}
                               style={
                                 {
-                                  "backgroundColor": "#3c4d9d0f",
+                                  "backgroundColor": "#b4b4b528",
                                   "borderRadius": 8,
                                   "marginVertical": 8,
                                   "padding": 16,
@@ -8619,7 +8564,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   testID="listitemcolumn"
                                 >
                                   <SvgMock
-                                    color="#686e7d"
+                                    color="#66676a"
                                     fill="currentColor"
                                     height={24}
                                     name="SecurityKey"
@@ -8653,7 +8598,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -8667,7 +8612,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -8693,7 +8638,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                 {
                                   "alignItems": "center",
                                   "alignSelf": "stretch",
-                                  "backgroundColor": "#121314",
+                                  "backgroundColor": "#131416",
                                   "borderRadius": 12,
                                   "flexDirection": "row",
                                   "height": 48,
@@ -8724,7 +8669,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                               name="powered-by-transak-logo"
                               style={
                                 {
-                                  "color": "#686e7d",
+                                  "color": "#66676a",
                                   "height": 24,
                                 }
                               }
@@ -8804,8 +8749,47 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
               onLayout={[Function]}
             >
               <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": false,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "height": 32,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": 32,
+                    },
+                    undefined,
                     {
                       "transform": [
                         {
@@ -8813,74 +8797,24 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                         },
                       ],
                     },
-                    {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
                   ]
                 }
+                testID="deposit-back-navbar-button"
               >
-                <View
-                  accessibilityState={
-                    {
-                      "busy": undefined,
-                      "checked": undefined,
-                      "disabled": false,
-                      "expanded": undefined,
-                      "selected": undefined,
-                    }
-                  }
-                  accessibilityValue={
-                    {
-                      "max": undefined,
-                      "min": undefined,
-                      "now": undefined,
-                      "text": undefined,
-                    }
-                  }
-                  accessible={true}
-                  collapsable={false}
-                  focusable={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
+                <SvgMock
+                  fill="currentColor"
+                  name="ArrowLeft"
                   style={
                     [
                       {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": 8,
-                        "height": 32,
-                        "justifyContent": "center",
-                        "opacity": 1,
-                        "width": 32,
+                        "color": "#131416",
+                        "height": 24,
+                        "width": 24,
                       },
                       undefined,
                     ]
                   }
-                  testID="deposit-back-navbar-button"
-                >
-                  <SvgMock
-                    fill="currentColor"
-                    name="ArrowLeft"
-                    style={
-                      [
-                        {
-                          "color": "#121314",
-                          "height": 24,
-                          "width": 24,
-                        },
-                        undefined,
-                      ]
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -8914,7 +8848,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                 style={
                   [
                     {
-                      "color": "#121314",
+                      "color": "#131416",
                       "fontFamily": "Geist-Bold",
                       "fontSize": 16,
                       "fontWeight": 400,
@@ -9279,7 +9213,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                             "height": 4,
                                           },
                                           {
-                                            "backgroundColor": "#b7bbc8",
+                                            "backgroundColor": "#babbbe",
                                           },
                                         ],
                                         undefined,
@@ -9292,9 +9226,9 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#121314",
+                                      "color": "#131416",
                                       "fontFamily": "Geist-Bold",
-                                      "fontSize": 18,
+                                      "fontSize": 20,
                                       "letterSpacing": 0,
                                       "lineHeight": 24,
                                       "marginBottom": 4,
@@ -9308,7 +9242,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   accessibilityRole="text"
                                   style={
                                     {
-                                      "color": "#686e7d",
+                                      "color": "#66676a",
                                       "fontFamily": "Geist-Regular",
                                       "fontSize": 16,
                                       "letterSpacing": 0,
@@ -9345,7 +9279,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -9390,8 +9324,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -9422,14 +9356,14 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="First name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -9477,7 +9411,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       accessibilityRole="text"
                                       style={
                                         {
-                                          "color": "#121314",
+                                          "color": "#131416",
                                           "fontFamily": "Geist-Regular",
                                           "fontSize": 16,
                                           "letterSpacing": 0,
@@ -9522,8 +9456,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       style={
                                         {
                                           "alignItems": "center",
-                                          "backgroundColor": "#3c4d9d0f",
-                                          "borderColor": "#b7bbc866",
+                                          "backgroundColor": "#b4b4b528",
+                                          "borderColor": "#b4b4b566",
                                           "borderRadius": 12,
                                           "borderWidth": 1,
                                           "flexDirection": "row",
@@ -9554,14 +9488,14 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           onFocus={[Function]}
                                           onSubmitEditing={[Function]}
                                           placeholder="Last name"
-                                          placeholderTextColor="#686e7d"
+                                          placeholderTextColor="#66676a"
                                           returnKeyType="next"
                                           style={
                                             {
                                               "backgroundColor": "inherit",
                                               "borderColor": "transparent",
                                               "borderWidth": 1,
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "fontWeight": "400",
@@ -9608,7 +9542,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -9653,8 +9587,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -9688,7 +9622,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 16,
                                               "letterSpacing": 0,
@@ -9702,7 +9636,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                           accessibilityRole="text"
                                           style={
                                             {
-                                              "color": "#b7bbc8",
+                                              "color": "#babbbe",
                                               "fontFamily": "Geist-Regular",
                                               "fontSize": 14,
                                               "letterSpacing": 0,
@@ -9735,13 +9669,13 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         onFocus={[Function]}
                                         onSubmitEditing={[Function]}
                                         placeholder="(555) 123-4567"
-                                        placeholderTextColor="#686e7d"
+                                        placeholderTextColor="#66676a"
                                         style={
                                           {
                                             "backgroundColor": "inherit",
                                             "borderColor": "transparent",
                                             "borderWidth": 1,
-                                            "color": "#121314",
+                                            "color": "#131416",
                                             "fontFamily": "Geist-Regular",
                                             "fontSize": 16,
                                             "fontWeight": "400",
@@ -9772,7 +9706,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#121314",
+                                        "color": "#131416",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 16,
                                         "letterSpacing": 0,
@@ -9817,8 +9751,8 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     style={
                                       {
                                         "alignItems": "center",
-                                        "backgroundColor": "#3c4d9d0f",
-                                        "borderColor": "#b7bbc866",
+                                        "backgroundColor": "#b4b4b528",
+                                        "borderColor": "#b4b4b566",
                                         "borderRadius": 12,
                                         "borderWidth": 1,
                                         "flexDirection": "row",
@@ -9838,7 +9772,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                       testID="textfield-startacccessory"
                                     >
                                       <SvgMock
-                                        color="#121314"
+                                        color="#131416"
                                         fill="currentColor"
                                         height={20}
                                         name="Calendar"
@@ -9871,11 +9805,11 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                         <TextInput
                                           editable={false}
                                           placeholder="01/01/2000"
-                                          placeholderTextColor="#b7bbc8"
+                                          placeholderTextColor="#babbbe"
                                           pointerEvents="none"
                                           style={
                                             {
-                                              "color": "#121314",
+                                              "color": "#131416",
                                               "flex": 1,
                                               "fontSize": 16,
                                               "height": "100%",
@@ -9913,7 +9847,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                               accessible={true}
                               style={
                                 {
-                                  "backgroundColor": "#3c4d9d0f",
+                                  "backgroundColor": "#b4b4b528",
                                   "borderRadius": 8,
                                   "marginVertical": 8,
                                   "padding": 16,
@@ -9938,7 +9872,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                   testID="listitemcolumn"
                                 >
                                   <SvgMock
-                                    color="#686e7d"
+                                    color="#66676a"
                                     fill="currentColor"
                                     height={24}
                                     name="SecurityKey"
@@ -9972,7 +9906,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -9986,7 +9920,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                     accessibilityRole="text"
                                     style={
                                       {
-                                        "color": "#686e7d",
+                                        "color": "#66676a",
                                         "fontFamily": "Geist-Regular",
                                         "fontSize": 12,
                                         "letterSpacing": 0.25,
@@ -10012,7 +9946,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                                 {
                                   "alignItems": "center",
                                   "alignSelf": "stretch",
-                                  "backgroundColor": "#121314",
+                                  "backgroundColor": "#131416",
                                   "borderRadius": 12,
                                   "flexDirection": "row",
                                   "height": 48,
@@ -10043,7 +9977,7 @@ exports[`BasicInfo Component snapshot matches validation errors when continue is
                               name="powered-by-transak-logo"
                               style={
                                 {
-                                  "color": "#686e7d",
+                                  "color": "#66676a",
                                   "height": 24,
                                 }
                               }

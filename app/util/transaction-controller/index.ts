@@ -13,10 +13,159 @@ import Engine from '../../core/Engine';
 import { selectBasicFunctionalityEnabled } from '../../selectors/settings';
 import { store } from '../../store';
 
+const TEMPO_TRANSACTION_TYPE = '0x76';
+
+// TODO: Interfaces and functions below are very similar to what what done on Extension.
+
+interface TempoCall {
+  to: Hex;
+  // In our tests we see '0x' (probably to signal no native token),
+  // However '0x' is invalid as a value and we use '0x0' when transforming.
+  value: Hex | '0x';
+  data: Hex;
+}
+
+interface TempoTransactionParams {
+  from: Hex;
+  chainId: Hex;
+  type: '0x76';
+  calls: TempoCall[];
+  feeToken?: Hex;
+}
+
+export function buildBatchTransactionsFromTempoTransactionCalls(
+  params: TempoTransactionParams,
+) {
+  return params.calls.map(({ data, to }) => ({
+    params: {
+      data,
+      to,
+      // Tempo Transactions 'calls' parameters differ in a least having '0x'
+      // (probably to signal absence of native token) instead of '0x0'.
+      value: '0x0' as Hex,
+    },
+  }));
+}
+
+export function isTempoTransactionParams(
+  params: TransactionParams,
+): params is TempoTransactionParams {
+  return (
+    params !== null &&
+    typeof params === 'object' &&
+    !Array.isArray(params) &&
+    'type' in params &&
+    params.type === TEMPO_TRANSACTION_TYPE
+  );
+}
+
+interface TempoConfig {
+  perChainConfig: {
+    [key: Hex]: {
+      enabled: boolean;
+      defaultFeeToken: Hex;
+    };
+  };
+}
+
+const TEMPO_CONFIG: TempoConfig = {
+  perChainConfig: {
+    '0x1079': {
+      enabled: true,
+      defaultFeeToken: '0x20c0000000000000000000000000000000000000',
+    },
+    '0xa5bf': {
+      enabled: true,
+      defaultFeeToken: '0x20c0000000000000000000000000000000000000',
+    },
+    '0x89': {
+      // Polygon PoS. TODO: Remove once Tempo is 7702-ready.
+      enabled: true,
+      defaultFeeToken: '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359',
+    },
+  },
+};
+
+// TODO: Is there a cleaner way to do this (outside of hook/component)
+function getTempoConfig(): TempoConfig {
+  return TEMPO_CONFIG;
+}
+
+export function isTempoTransaction(txParams: TransactionParams) {
+  return txParams.type === TEMPO_TRANSACTION_TYPE;
+}
+
+async function addTempoTransaction(
+  transaction: TransactionParams,
+  opts: Parameters<BaseTransactionController['addTransaction']>[1],
+) {
+  const tempoConfig = getTempoConfig();
+  // There doesn't seem to be any alternative to chainId here.
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const chainId = transaction.chainId!;
+  const tempoConfigForChain = tempoConfig.perChainConfig[chainId];
+
+  if (!tempoConfigForChain) {
+    throw new Error(
+      `Tempo transactions are not supported for chain: ${chainId}`,
+    );
+  }
+
+  if (!tempoConfigForChain.enabled) {
+    throw new Error(`Tempo transactions are disabled for chain: ${chainId}`);
+  }
+
+  // Checks and infer Tempo Transaction format for supported fields.
+  if (!isTempoTransactionParams(transaction)) {
+    throw new Error('Invalid Tempo Transaction Params');
+  }
+  const tempoBatchRequestParams = {
+    from: transaction.from as Hex,
+    transactions: buildBatchTransactionsFromTempoTransactionCalls(transaction),
+    // If no token is provided, we force a default one so we don't fall in
+    // fee preference algo: https://docs.tempo.xyz/protocol/fees/spec-fee#fee-token-preferences
+    gasFeeToken: transaction.feeToken || tempoConfigForChain.defaultFeeToken,
+    excludeNativeTokenForFee: true,
+  };
+
+  const { TransactionController } = Engine.context;
+
+  const result = await TransactionController.addTransactionBatch({
+    ...tempoBatchRequestParams,
+    ...opts,
+  });
+
+  const { batchId } = result;
+  const transactionMeta = TransactionController?.getTransactions({
+    searchCriteria: { batchId },
+  })?.[0];
+
+  if (!transactionMeta) {
+    throw new Error(
+      `Batch submitted with id ${batchId} but no matching transaction found in transactionController.`,
+    );
+  }
+
+  if (!transactionMeta.hash) {
+    throw new Error(
+      `Batch submitted with id ${batchId} but transaction found in transactionController does have a hash.`,
+    );
+  }
+
+  return {
+    transactionMeta,
+    result: async () => transactionMeta.hash,
+  };
+}
+
 export async function addTransaction(
   transaction: TransactionParams,
   opts: Parameters<BaseTransactionController['addTransaction']>[1],
 ) {
+  if (isTempoTransactionParams(transaction)) {
+    return await addTempoTransaction(transaction, opts);
+  }
+
   const { TransactionController } = Engine.context;
 
   return await TransactionController.addTransaction(transaction, opts);

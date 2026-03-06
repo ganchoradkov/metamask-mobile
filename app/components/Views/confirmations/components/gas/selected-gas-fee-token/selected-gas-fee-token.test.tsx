@@ -47,6 +47,7 @@ describe('SelectedGasFeeToken', () => {
     gasFeeTokens = [],
     transactionMetadata,
     estimationFailed = false,
+    excludeNativeTokenForFee,
   }: {
     insufficientBalance?: Alert[];
     selectedGasFeeToken?: ReturnType<typeof useSelectedGasFeeToken>;
@@ -58,6 +59,7 @@ describe('SelectedGasFeeToken', () => {
     > | null;
     expectModal?: boolean;
     estimationFailed?: boolean;
+    excludeNativeTokenForFee?: boolean;
   } = {}) => {
     mockUseInsufficientBalanceAlert.mockReturnValue(insufficientBalance);
     mockUseEstimationFailed.mockReturnValue(estimationFailed);
@@ -83,6 +85,7 @@ describe('SelectedGasFeeToken', () => {
       mockUseTransactionMetadataRequest.mockReturnValue({
         chainId: '0x1',
         gasFeeTokens,
+        excludeNativeTokenForFee,
       } as Partial<
         ReturnType<typeof useTransactionMetadataRequest>
       > as ReturnType<typeof useTransactionMetadataRequest>);
@@ -165,6 +168,21 @@ describe('SelectedGasFeeToken', () => {
 
   it('does not render the arrow icon when no gas fee tokens are available', () => {
     const { queryByTestId } = setupTest();
+    expect(queryByTestId('selected-gas-fee-token-arrow')).toBeNull();
+  });
+
+  it('does not render arrow icon if only one gas fee token and `excludeNativeTokenForFee` is set', () => {
+    const { queryByTestId } = setupTest({
+      selectedGasFeeToken: {
+        tokenAddress: '0xTokenAddress',
+        symbol: 'DAI',
+      } as unknown as ReturnType<typeof useSelectedGasFeeToken>,
+      gaslessSupported: true,
+      gasFeeTokens: [
+        { tokenAddress: '0xTokenAddress', symbol: 'DAI' },
+      ] as unknown as GasFeeToken[],
+      excludeNativeTokenForFee: true,
+    });
     expect(queryByTestId('selected-gas-fee-token-arrow')).toBeNull();
   });
 

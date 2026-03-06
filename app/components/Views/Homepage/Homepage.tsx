@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import { useSelector } from 'react-redux';
 import { Box } from '@metamask/design-system-react-native';
+import { CashSection } from './Sections/Cash';
 import TokensSection from './Sections/Tokens';
 import PerpsSection from './Sections/Perpetuals';
 import PredictionsSection from './Sections/Predictions';
@@ -16,6 +17,8 @@ import { SectionRefreshHandle } from './types';
 import { selectPerpsEnabledFlag } from '../../UI/Perps';
 import { selectPredictEnabledFlag } from '../../UI/Predict/selectors/featureFlags';
 import { selectAssetsDefiPositionsEnabled } from '../../../selectors/featureFlagController/assetsDefiPositions';
+import { selectIsMusdConversionFlowEnabledFlag } from '../../UI/Earn/selectors/featureFlags';
+import { useMusdConversionEligibility } from '../../UI/Earn/hooks/useMusdConversionEligibility';
 import { HomeSectionNames, HomeSectionName } from './hooks/useHomeViewedEvent';
 import useHomeSessionSummary from './hooks/useHomeSessionSummary';
 
@@ -35,21 +38,27 @@ const Homepage = forwardRef<SectionRefreshHandle>((_, ref) => {
   const isPerpsEnabled = useSelector(selectPerpsEnabledFlag);
   const isPredictEnabled = useSelector(selectPredictEnabledFlag);
   const isDeFiEnabled = useSelector(selectAssetsDefiPositionsEnabled);
+  const isMusdConversionEnabled = useSelector(
+    selectIsMusdConversionFlowEnabledFlag,
+  );
+  const { isEligible: isGeoEligible } = useMusdConversionEligibility();
+  const isCashSectionEnabled = isMusdConversionEnabled && isGeoEligible;
 
   /**
-   * Compute the ordered list of enabled sections. Tokens and NFTs are always
-   * present; Perps, Predictions, and DeFi are feature-flagged.
+   * Compute the ordered list of enabled sections. Cash is first when enabled;
+   * Tokens and NFTs are always present; Perps, Predictions, and DeFi are feature-flagged.
    */
   const enabledSections = useMemo(
     () =>
       [
+        { name: HomeSectionNames.CASH, enabled: isCashSectionEnabled },
         { name: HomeSectionNames.TOKENS, enabled: true },
         { name: HomeSectionNames.PERPS, enabled: isPerpsEnabled },
         { name: HomeSectionNames.PREDICT, enabled: isPredictEnabled },
         { name: HomeSectionNames.DEFI, enabled: isDeFiEnabled },
         { name: HomeSectionNames.NFTS, enabled: true },
       ].filter((s) => s.enabled),
-    [isPerpsEnabled, isPredictEnabled, isDeFiEnabled],
+    [isCashSectionEnabled, isPerpsEnabled, isPredictEnabled, isDeFiEnabled],
   );
 
   const totalSectionsLoaded = enabledSections.length;
@@ -75,7 +84,11 @@ const Homepage = forwardRef<SectionRefreshHandle>((_, ref) => {
   useImperativeHandle(ref, () => ({ refresh }), [refresh]);
 
   return (
-    <Box gap={10} marginBottom={8} marginTop={4} testID="homepage-container">
+    <Box gap={12} marginBottom={8} paddingTop={4} testID="homepage-container">
+      <CashSection
+        sectionIndex={getSectionIndex(HomeSectionNames.CASH)}
+        totalSectionsLoaded={totalSectionsLoaded}
+      />
       <TokensSection
         ref={tokensSectionRef}
         sectionIndex={getSectionIndex(HomeSectionNames.TOKENS)}

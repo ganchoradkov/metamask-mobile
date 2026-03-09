@@ -34,7 +34,7 @@ import {
 } from '../hooks/useRewardDashboardModals';
 import { useBulkLinkState } from '../hooks/useBulkLinkState';
 import RewardsOverview from '../components/Tabs/RewardsOverview';
-import CampaignsTab from '../components/Tabs/CampaignsTab/CampaignsTab';
+import { CampaignsTab } from '../components/Tabs/CampaignsTab/CampaignsTab';
 import RewardsActivity from '../components/Tabs/RewardsActivity';
 import { TabsList } from '../../../../component-library/components-temp/Tabs';
 import { TabsListRef } from '../../../../component-library/components-temp/Tabs/TabsList/TabsList.types';

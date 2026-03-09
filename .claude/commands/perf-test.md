@@ -76,10 +76,10 @@ test.describe(`${PerformanceLogin}`, () => {
         device,
       );
 
-      // 4. Perform actions and measure
-      await SomeScreen.tapSomeButton();
+      // 4. Perform action OUTSIDE measure, assertion INSIDE measure
+      await SomeScreen.tapSomeButton();          // action (not timed)
       await timer1.measure(async () => {
-        await AnotherScreen.isElementVisible();
+        await AnotherScreen.isElementVisible();  // assertion only (timed)
       });
 
       // 5. Add all timers and attach to test
@@ -149,6 +149,37 @@ test.describe(PerformanceOnboarding, () => {
 
 ### Step 3: Write Timers
 
+#### CRITICAL RULE: Actions OUTSIDE measure, Assertions INSIDE measure
+
+The `measure()` callback must contain **only assertions/wait conditions** — never user actions like taps, types, or swipes. The user action that triggers the transition goes **before** the `measure()` call. This ensures we measure purely the app's response time, not the interaction itself.
+
+```js
+// ✅ CORRECT — tap OUTSIDE measure, assertion INSIDE measure
+await WalletMainScreen.tapSwapButton();
+await timer.measure(() => BridgeScreen.isVisible());
+
+// ✅ CORRECT — multiple assertions inside measure are fine
+await WalletMainScreen.tapOnToken('USDC');
+await timer.measure(async () => {
+  await TokenOverviewScreen.isTokenOverviewVisible();
+  await TokenOverviewScreen.isTodaysChangeVisible();
+  await TokenOverviewScreen.isSendButtonVisible();
+});
+
+// ❌ WRONG — tap inside measure pollutes the timing
+await timer.measure(async () => {
+  await WalletMainScreen.tapSwapButton();  // ❌ action inside measure
+  await BridgeScreen.isVisible();
+});
+
+// ❌ WRONG — mixing actions and assertions
+await timer.measure(async () => {
+  await Screen.tapSomeButton();            // ❌ action
+  await Screen.typeText('hello');           // ❌ action
+  await NextScreen.isVisible();            // ✅ assertion (but above polluted the timing)
+});
+```
+
 #### 3a: Using `timer.measure()` (preferred — simple flows)
 
 When the action that starts the timer and the wait condition are in sequence:
@@ -160,13 +191,15 @@ const timer = new TimerHelper(
   device,
 );
 
+// Action BEFORE measure
 await WalletMainScreen.tapSwapButton();
+// Only assertions INSIDE measure
 await timer.measure(() => BridgeScreen.isVisible());
 ```
 
 #### 3b: Using manual `start()` / `stop()` (cross-context flows)
 
-When timing spans context switches (e.g., native ↔ web in dapp tests):
+When timing spans context switches (e.g., native ↔ web in dapp tests), the same rule applies: `start()` goes right after the triggering action, and `stop()` goes after the assertion that confirms the result.
 
 ```js
 const connectTimer = new TimerHelper(
@@ -175,27 +208,27 @@ const connectTimer = new TimerHelper(
   device,
 );
 
-// Start in web context
+// Action then start — tap triggers the flow, then start timing
 await AppwrightHelpers.withWebAction(device, async () => {
-  connectTimer.start();
-  await BrowserPlaygroundDapp.tapConnectLegacy();
+  await BrowserPlaygroundDapp.tapConnectLegacy(); // action
+  connectTimer.start();                            // start AFTER the action
 }, DAPP_URL);
 
-// Continue in native context
+// Continue in native context — these are intermediate actions, not measured
 await AppwrightHelpers.withNativeAction(device, async () => {
   await DappConnectionModal.tapConnectButton();
 });
 
-// Stop in web context after verification
+// Stop after assertion — only the verification is inside the timed window
 await AppwrightHelpers.withWebAction(device, async () => {
-  await BrowserPlaygroundDapp.assertConnected(true);
-  connectTimer.stop();
+  await BrowserPlaygroundDapp.assertConnected(true); // assertion
+  connectTimer.stop();                                // stop AFTER assertion
 }, DAPP_URL);
 ```
 
 #### 3c: Multi-timer flows
 
-For complex scenarios, define all timers upfront and measure each step:
+For complex scenarios, define all timers upfront. Each step follows the same pattern: action first, then `measure()` with only assertions.
 
 ```js
 const timer1 = new TimerHelper(
@@ -214,14 +247,17 @@ const timer3 = new TimerHelper(
   device,
 );
 
-// Execute each step with its timer
+// Step 1: action OUTSIDE, assertion INSIDE
 await Screen.tapAction1();
 await timer1.measure(async () => await NextScreen.isVisible());
 
+// Step 2: action OUTSIDE, assertion INSIDE
 await NextScreen.tapAction2();
 await timer2.measure(async () => await AnotherScreen.isVisible());
 
-// ... continue
+// Step 3: action OUTSIDE, assertion INSIDE
+await AnotherScreen.tapContinueButton();
+await timer3.measure(async () => await PasswordScreen.isVisible());
 
 performanceTracker.addTimers(timer1, timer2, timer3);
 await performanceTracker.attachToTest(testInfo);
@@ -421,6 +457,7 @@ as any                            // Use proper types
 // Timer without threshold        // Always provide { ios: X, android: Y }
 // Timer without team tag         // Always include { tag: '@team-name' }
 // Missing attachToTest           // Always call performanceTracker.attachToTest(testInfo)
+// Actions inside measure()       // ONLY assertions/waits go inside measure — taps/types go BEFORE
 ```
 
 ## Checklist Before Submitting
@@ -435,6 +472,7 @@ as any                            // Use proper types
 - [ ] All timers are added via `performanceTracker.addTimers()` or `performanceTracker.addTimer()`
 - [ ] `performanceTracker.attachToTest(testInfo)` is called at the end
 - [ ] `test.setTimeout()` is set for long flows (onboarding: 240000ms+)
+- [ ] Actions (taps, types, swipes) are OUTSIDE `measure()` — only assertions/waits inside
 - [ ] No mocking of any kind
 - [ ] No hardcoded passwords (use `getPasswordForScenario()`)
 - [ ] Test name is descriptive and matches the scenario being measured

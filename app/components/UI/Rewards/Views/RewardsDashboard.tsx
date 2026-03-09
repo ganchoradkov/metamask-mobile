@@ -26,7 +26,7 @@ import {
 } from '../../../../reducers/rewards/selectors';
 import SeasonStatus from '../components/SeasonStatus/SeasonStatus';
 import { selectRewardsSubscriptionId } from '../../../../selectors/rewards';
-import { selectSnapshotsRewardsEnabledFlag } from '../../../../selectors/featureFlagController/rewards';
+import { selectCampaignsRewardsEnabledFlag } from '../../../../selectors/featureFlagController/rewards';
 import { useRewardOptinSummary } from '../hooks/useRewardOptinSummary';
 import {
   useRewardDashboardModals,
@@ -34,7 +34,7 @@ import {
 } from '../hooks/useRewardDashboardModals';
 import { useBulkLinkState } from '../hooks/useBulkLinkState';
 import RewardsOverview from '../components/Tabs/RewardsOverview';
-import RewardsSnapshots from '../components/Tabs/RewardsSnapshots';
+import CampaignsTab from '../components/Tabs/CampaignsTab/CampaignsTab';
 import RewardsActivity from '../components/Tabs/RewardsActivity';
 import { TabsList } from '../../../../component-library/components-temp/Tabs';
 import { TabsListRef } from '../../../../component-library/components-temp/Tabs/TabsList/TabsList.types';
@@ -58,7 +58,7 @@ const RewardsDashboard: React.FC = () => {
   );
   const seasonId = useSelector(selectSeasonId);
   const seasonEndDate = useSelector(selectSeasonEndDate);
-  const isSnapshotsEnabled = useSelector(selectSnapshotsRewardsEnabledFlag);
+  const isCampaignsEnabled = useSelector(selectCampaignsRewardsEnabledFlag);
   const hideCurrentAccountNotOptedInBannerMap = useSelector(
     selectHideCurrentAccountNotOptedInBannerArray,
   );
@@ -121,19 +121,21 @@ const RewardsDashboard: React.FC = () => {
 
   const tabOptions = useMemo(() => {
     const options: {
-      value: 'overview' | 'snapshots' | 'activity';
+      value: 'overview' | 'campaigns' | 'activity';
       label: string;
-    }[] = [
-      {
+    }[] = [];
+
+    if (!isCampaignsEnabled) {
+      options.push({
         value: 'overview' as const,
         label: strings('rewards.tab_overview_title'),
-      },
-    ];
+      });
+    }
 
-    if (isSnapshotsEnabled) {
+    if (isCampaignsEnabled) {
       options.push({
-        value: 'snapshots' as const,
-        label: strings('rewards.tab_snapshots_title'),
+        value: 'campaigns' as const,
+        label: strings('rewards.tab_campaigns_title'),
       });
     }
 
@@ -143,21 +145,20 @@ const RewardsDashboard: React.FC = () => {
     });
 
     return options;
-  }, [isSnapshotsEnabled]);
+  }, [isCampaignsEnabled]);
 
   const getActiveIndex = useCallback(
     () => tabOptions.findIndex((tab) => tab.value === activeTab),
     [tabOptions, activeTab],
   );
 
-  // Reset activeTab to 'overview' if current tab becomes unavailable (e.g., snapshots disabled)
-  // This ensures Redux state stays in sync with the visible tab and analytics events are accurate
+  // Reset activeTab to the first available tab if current tab becomes unavailable
   useEffect(() => {
     const isCurrentTabAvailable = tabOptions.some(
       (tab) => tab.value === activeTab,
     );
-    if (!isCurrentTabAvailable) {
-      dispatch(setActiveTab('overview'));
+    if (!isCurrentTabAvailable && tabOptions.length > 0) {
+      dispatch(setActiveTab(tabOptions[0].value));
     }
   }, [tabOptions, activeTab, dispatch]);
 
@@ -198,18 +199,22 @@ const RewardsDashboard: React.FC = () => {
   );
 
   const tabComponents = useMemo(() => {
-    const tabs: React.ReactElement[] = [
-      <RewardsOverview
-        key="overview"
-        tabLabel={strings('rewards.tab_overview_title')}
-      />,
-    ];
+    const tabs: React.ReactElement[] = [];
 
-    if (isSnapshotsEnabled) {
+    if (!isCampaignsEnabled) {
       tabs.push(
-        <RewardsSnapshots
-          key="snapshots"
-          tabLabel={strings('rewards.tab_snapshots_title')}
+        <RewardsOverview
+          key="overview"
+          tabLabel={strings('rewards.tab_overview_title')}
+        />,
+      );
+    }
+
+    if (isCampaignsEnabled) {
+      tabs.push(
+        <CampaignsTab
+          key="campaigns"
+          tabLabel={strings('rewards.tab_campaigns_title')}
         />,
       );
     }
@@ -222,7 +227,7 @@ const RewardsDashboard: React.FC = () => {
     );
 
     return tabs;
-  }, [isSnapshotsEnabled]);
+  }, [isCampaignsEnabled]);
 
   // Auto-resume interrupted bulk link process when screen comes into focus.
   // This handles the case where the app was closed during a bulk opt-in process.
@@ -241,10 +246,11 @@ const RewardsDashboard: React.FC = () => {
       const shouldShow = Boolean(
         seasonId &&
           seasonEndDate &&
-          new Date(seasonEndDate).getTime() < Date.now(),
+          new Date(seasonEndDate).getTime() < Date.now() &&
+          !isCampaignsEnabled,
       );
       setShowPreviousSeasonSummary(shouldShow);
-    }, [seasonId, seasonEndDate]),
+    }, [seasonId, seasonEndDate, isCampaignsEnabled]),
   );
 
   // Auto-trigger dashboard modals based on account/rewards state (session-aware)

@@ -2197,6 +2197,7 @@
     "available_balance": "Verfügbares Guthaben",
     "claim_amount_text": "{{amount}} $ einfordern",
     "claim_winnings_text": "Gewinne einfordern",
+    "claiming_text": "Claiming...",
     "unrealized_pnl_label": "Nicht realisierte GuV",
     "unrealized_pnl_value": "{{amount}} ({{percent}})",
     "unrealized_pnl_error": "Laden nicht möglich",
@@ -2275,6 +2276,9 @@
           "title": "Hoppla! Etwas ist schiefgelaufen ...",
           "description": "Fortfahren mit Einforderung fehlgeschlagen",
           "try_again": "Erneut versuchen"
+        },
+        "in_progress": {
+          "title": "Claim already in progress"
         }
       }
     },
@@ -2333,7 +2337,8 @@
       "exchange_fee": "Umrechnungsgebühr",
       "exchange_fee_description": "An die Börse oder den Markt entrichtete Gebühr",
       "total_incl_fees": "inkl. Gebühren",
-      "close": "Schließen"
+      "close": "Schließen",
+      "fak_partial_fill_note": "Prices shown assume your order is fully filled. Actual amounts may vary if the order is only partially filled."
     },
     "error": {
       "title": "Verbindung zu Prognosen nicht möglich",
@@ -6092,7 +6097,8 @@
       "fee": "Gebühr",
       "errors": {
         "insufficient_balance": "Sie haben nicht genügend Ressourcen, um diese Aktion durchzuführen."
-      }
+      },
+      "trx_unstaking_in_progress": "Unstaking {{amount}} TRX in progress. It takes 14 days for unstaking."
     },
     "stake_eth": "ETH staken",
     "unstake_eth": "ETH unstaken",
@@ -6343,7 +6349,8 @@
       "metamask_fee": "MetaMask-Gebühr",
       "network_fee": "Netzwerk-Gebühr",
       "bridge_fee": "Gebühr für Bridge-Anbieter",
-      "provider_fee": "Anbietergebühr"
+      "provider_fee": "Anbietergebühr",
+      "sending": "Sending"
     },
     "title": {
       "signature": "Signaturanfrage",
@@ -6603,6 +6610,10 @@
     "exceeding_upper_slippage_error": "Sie können keinen Wert eingeben, der größer als {{value}} % ist.",
     "custom": "Benutzerdefiniert",
     "invalid_recipient_address": "Ungültige Adresse",
+    "select_quote": "Select Quote",
+    "select_quote_info": "Quotes are sorted by the estimated total cost, which includes the exchange rate and network fee.",
+    "lowest_cost": "Lowest cost",
+    "total_cost": "Total Cost",
     "got_it": "Got it"
   },
   "quote_expired_modal": {
@@ -7394,7 +7405,8 @@
   "pay_with_modal": {
     "title": "Zahlungsmethode auswählen",
     "title_receive": "Token empfangen auswählen",
-    "no_gas": "Kein nativer Saldo für Gas"
+    "no_gas": "Kein nativer Saldo für Gas",
+    "not_supported": "Not supported"
   },
   "connection_removed_modal": {
     "title": "Verbindungen entfernt",

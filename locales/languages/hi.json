@@ -2197,6 +2197,7 @@
     "available_balance": "उपलब्ध बैलेंस",
     "claim_amount_text": "${{amount}} क्लेम करें",
     "claim_winnings_text": "जीत का ईनाम क्लेम करें",
+    "claiming_text": "Claiming...",
     "unrealized_pnl_label": "अनरियलाइज्ड P&L",
     "unrealized_pnl_value": "{{amount}} ({{percent}})",
     "unrealized_pnl_error": "लोड करने में असमर्थ",
@@ -2275,6 +2276,9 @@
           "title": "कुछ गलत हो गया",
           "description": "क्लेम नहीं हो पाया",
           "try_again": "फिर से प्रयास करें"
+        },
+        "in_progress": {
+          "title": "Claim already in progress"
         }
       }
     },
@@ -2333,7 +2337,8 @@
       "exchange_fee": "एक्सचेंज शुल्क",
       "exchange_fee_description": "एक्सचेंज या मार्केट को दिया गया शुल्क",
       "total_incl_fees": "शुल्क सहित",
-      "close": "बंद करें"
+      "close": "बंद करें",
+      "fak_partial_fill_note": "Prices shown assume your order is fully filled. Actual amounts may vary if the order is only partially filled."
     },
     "error": {
       "title": "प्रीडिक्शंस से कनेक्ट नहीं हो पाया",
@@ -6092,7 +6097,8 @@
       "fee": "फीस",
       "errors": {
         "insufficient_balance": "आपके पास यह काम करने के लिए पर्याप्त रिसोर्स बैलेंस नहीं है।"
-      }
+      },
+      "trx_unstaking_in_progress": "Unstaking {{amount}} TRX in progress. It takes 14 days for unstaking."
     },
     "stake_eth": "ETH स्टेक करें",
     "unstake_eth": "ETH अनस्टेक करें",
@@ -6343,7 +6349,8 @@
       "metamask_fee": "MetaMask फीस",
       "network_fee": "नेटवर्क फीस",
       "bridge_fee": "प्रदाता फीस ब्रिज करें",
-      "provider_fee": "प्रदाता फीस"
+      "provider_fee": "प्रदाता फीस",
+      "sending": "Sending"
     },
     "title": {
       "signature": "हस्ताक्षर का अनुरोध",
@@ -6603,6 +6610,10 @@
     "exceeding_upper_slippage_error": "आप {{value}}% से ज़्यादा वैल्यू नहीं डाल सकते",
     "custom": "कस्टम",
     "invalid_recipient_address": "एड्रेस ग़लत है",
+    "select_quote": "Select Quote",
+    "select_quote_info": "Quotes are sorted by the estimated total cost, which includes the exchange rate and network fee.",
+    "lowest_cost": "Lowest cost",
+    "total_cost": "Total Cost",
     "got_it": "Got it"
   },
   "quote_expired_modal": {
@@ -7394,7 +7405,8 @@
   "pay_with_modal": {
     "title": "भुगतान विधि चुनें",
     "title_receive": "प्राप्त करने के लिए टोकन चुनें",
-    "no_gas": "गैस के लिए कोई नेटिव बैलेंस नहीं है"
+    "no_gas": "गैस के लिए कोई नेटिव बैलेंस नहीं है",
+    "not_supported": "Not supported"
   },
   "connection_removed_modal": {
     "title": "कनेक्शन हटा दिए गए",

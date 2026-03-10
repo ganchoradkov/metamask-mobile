@@ -2197,6 +2197,7 @@
     "available_balance": "Доступный баланс",
     "claim_amount_text": "Получить {{amount}} $",
     "claim_winnings_text": "Получить выигрыши",
+    "claiming_text": "Claiming...",
     "unrealized_pnl_label": "Нереализованные П/У",
     "unrealized_pnl_value": "{{amount}} ({{percent}})",
     "unrealized_pnl_error": "Не удалось загрузить",
@@ -2275,6 +2276,9 @@
           "title": "Что-то пошло не так",
           "description": "Не удалось востребовать",
           "try_again": "Повторить попытку"
+        },
+        "in_progress": {
+          "title": "Claim already in progress"
         }
       }
     },
@@ -2333,7 +2337,8 @@
       "exchange_fee": "Комиссия биржи",
       "exchange_fee_description": "Комиссия, уплачиваемая бирже или рынку",
       "total_incl_fees": "вкл. комиссии",
-      "close": "Закрыть"
+      "close": "Закрыть",
+      "fak_partial_fill_note": "Prices shown assume your order is fully filled. Actual amounts may vary if the order is only partially filled."
     },
     "error": {
       "title": "Невозможно подключиться к прогнозам",
@@ -6092,7 +6097,8 @@
       "fee": "Комиссия",
       "errors": {
         "insufficient_balance": "У вас недостаточно ресурсов для выполнения этого действия."
-      }
+      },
+      "trx_unstaking_in_progress": "Unstaking {{amount}} TRX in progress. It takes 14 days for unstaking."
     },
     "stake_eth": "Выполнить стейкинг ETH",
     "unstake_eth": "Отменить стейкинг ETH",
@@ -6343,7 +6349,8 @@
       "metamask_fee": "Комиссия MetaMask",
       "network_fee": "Комиссия сети",
       "bridge_fee": "Комиссия поставщика моста",
-      "provider_fee": "Комиссия поставщика"
+      "provider_fee": "Комиссия поставщика",
+      "sending": "Sending"
     },
     "title": {
       "signature": "Запрос подписи",
@@ -6603,6 +6610,10 @@
     "exceeding_upper_slippage_error": "Вы не можете ввести значение более {{value}}%",
     "custom": "Пользовательские",
     "invalid_recipient_address": "Недействительный адрес",
+    "select_quote": "Select Quote",
+    "select_quote_info": "Quotes are sorted by the estimated total cost, which includes the exchange rate and network fee.",
+    "lowest_cost": "Lowest cost",
+    "total_cost": "Total Cost",
     "got_it": "Got it"
   },
   "quote_expired_modal": {
@@ -7394,7 +7405,8 @@
   "pay_with_modal": {
     "title": "Выбрать способ оплаты",
     "title_receive": "Выберите токен для получения",
-    "no_gas": "Нет нативного баланса для оплаты газа"
+    "no_gas": "Нет нативного баланса для оплаты газа",
+    "not_supported": "Not supported"
   },
   "connection_removed_modal": {
     "title": "Соединения удалены",

@@ -2197,6 +2197,7 @@
     "available_balance": "Số dư khả dụng",
     "claim_amount_text": "Nhận ${{amount}}",
     "claim_winnings_text": "Nhận tiền thắng",
+    "claiming_text": "Claiming...",
     "unrealized_pnl_label": "Lãi/Lỗ chưa thực hiện",
     "unrealized_pnl_value": "{{amount}} ({{percent}})",
     "unrealized_pnl_error": "Không thể tải",
@@ -2275,6 +2276,9 @@
           "title": "Đã xảy ra sự cố",
           "description": "Không thể thực hiện yêu cầu nhận tiền",
           "try_again": "Thử lại"
+        },
+        "in_progress": {
+          "title": "Claim already in progress"
         }
       }
     },
@@ -2333,7 +2337,8 @@
       "exchange_fee": "Phí sàn giao dịch",
       "exchange_fee_description": "Phí trả cho sàn giao dịch hoặc thị trường",
       "total_incl_fees": "bao gồm phí",
-      "close": "Đóng"
+      "close": "Đóng",
+      "fak_partial_fill_note": "Prices shown assume your order is fully filled. Actual amounts may vary if the order is only partially filled."
     },
     "error": {
       "title": "Không thể kết nối với thị trường dự đoán",
@@ -6092,7 +6097,8 @@
       "fee": "Phí",
       "errors": {
         "insufficient_balance": "Bạn không có đủ số dư tài nguyên để thực hiện hành động này."
-      }
+      },
+      "trx_unstaking_in_progress": "Unstaking {{amount}} TRX in progress. It takes 14 days for unstaking."
     },
     "stake_eth": "Ký gửi ETH",
     "unstake_eth": "Hủy ký gửi ETH",
@@ -6343,7 +6349,8 @@
       "metamask_fee": "Phí MetaMask",
       "network_fee": "Phí mạng",
       "bridge_fee": "Phí nhà cung cấp cầu nối",
-      "provider_fee": "Phí nhà cung cấp"
+      "provider_fee": "Phí nhà cung cấp",
+      "sending": "Sending"
     },
     "title": {
       "signature": "Yêu cầu chữ ký",
@@ -6603,6 +6610,10 @@
     "exceeding_upper_slippage_error": "Bạn không thể nhập giá trị lớn hơn {{value}}%",
     "custom": "Tùy chỉnh",
     "invalid_recipient_address": "Địa chỉ không hợp lệ",
+    "select_quote": "Select Quote",
+    "select_quote_info": "Quotes are sorted by the estimated total cost, which includes the exchange rate and network fee.",
+    "lowest_cost": "Lowest cost",
+    "total_cost": "Total Cost",
     "got_it": "Got it"
   },
   "quote_expired_modal": {
@@ -7394,7 +7405,8 @@
   "pay_with_modal": {
     "title": "Chọn phương thức thanh toán",
     "title_receive": "Chọn token nhận được",
-    "no_gas": "Không có số dư token gốc để trả phí gas"
+    "no_gas": "Không có số dư token gốc để trả phí gas",
+    "not_supported": "Not supported"
   },
   "connection_removed_modal": {
     "title": "Kết nối đã bị xóa",

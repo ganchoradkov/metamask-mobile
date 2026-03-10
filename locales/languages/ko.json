@@ -2197,6 +2197,7 @@
     "available_balance": "사용 가능한 잔액",
     "claim_amount_text": "${{amount}} 수령",
     "claim_winnings_text": "수익금 수령",
+    "claiming_text": "Claiming...",
     "unrealized_pnl_label": "미실현 손익",
     "unrealized_pnl_value": "{{amount}}({{percent}})",
     "unrealized_pnl_error": "불러올 수 없습니다",
@@ -2275,6 +2276,9 @@
           "title": "문제가 발생했습니다",
           "description": "수익금 수령을 진행할 수 없음",
           "try_again": "다시 시도"
+        },
+        "in_progress": {
+          "title": "Claim already in progress"
         }
       }
     },
@@ -2333,7 +2337,8 @@
       "exchange_fee": "거래소 수수료",
       "exchange_fee_description": "거래소 또는 시장에 지불한 수수료",
       "total_incl_fees": "수수료 포함",
-      "close": "닫기"
+      "close": "닫기",
+      "fak_partial_fill_note": "Prices shown assume your order is fully filled. Actual amounts may vary if the order is only partially filled."
     },
     "error": {
       "title": "예측에 연결할 수 없습니다",
@@ -6092,7 +6097,8 @@
       "fee": "수수료",
       "errors": {
         "insufficient_balance": "이 작업을 수행하기에 리소스 잔액이 부족합니다."
-      }
+      },
+      "trx_unstaking_in_progress": "Unstaking {{amount}} TRX in progress. It takes 14 days for unstaking."
     },
     "stake_eth": "ETH 스테이크",
     "unstake_eth": "ETH 언스테이크",
@@ -6343,7 +6349,8 @@
       "metamask_fee": "MetaMask 수수료",
       "network_fee": "네트워크 수수료",
       "bridge_fee": "브릿지 제공자 수수료",
-      "provider_fee": "공급자 수수료"
+      "provider_fee": "공급자 수수료",
+      "sending": "Sending"
     },
     "title": {
       "signature": "서명 요청",
@@ -6603,6 +6610,10 @@
     "exceeding_upper_slippage_error": "{{value}}%를 초과하는 값은 입력할 수 없습니다",
     "custom": "맞춤형",
     "invalid_recipient_address": "잘못된 주소",
+    "select_quote": "Select Quote",
+    "select_quote_info": "Quotes are sorted by the estimated total cost, which includes the exchange rate and network fee.",
+    "lowest_cost": "Lowest cost",
+    "total_cost": "Total Cost",
     "got_it": "Got it"
   },
   "quote_expired_modal": {
@@ -7394,7 +7405,8 @@
   "pay_with_modal": {
     "title": "결제 방법 선택",
     "title_receive": "토큰 받기 선택",
-    "no_gas": "가스비로 사용할 네이티브 토큰 잔액 없음"
+    "no_gas": "가스비로 사용할 네이티브 토큰 잔액 없음",
+    "not_supported": "Not supported"
   },
   "connection_removed_modal": {
     "title": "연결 제거 완료",

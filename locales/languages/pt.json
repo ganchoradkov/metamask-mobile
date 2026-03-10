@@ -2197,6 +2197,7 @@
     "available_balance": "Saldo disponível",
     "claim_amount_text": "Resgatar $ {{amount}}",
     "claim_winnings_text": "Resgatar ganhos",
+    "claiming_text": "Claiming...",
     "unrealized_pnl_label": "P&L não realizados",
     "unrealized_pnl_value": "{{amount}} ({{percent}})",
     "unrealized_pnl_error": "Não foi possível carregar",
@@ -2275,6 +2276,9 @@
           "title": "Ocorreu algum erro",
           "description": "Falha ao continuar com o resgate",
           "try_again": "Tentar novamente"
+        },
+        "in_progress": {
+          "title": "Claim already in progress"
         }
       }
     },
@@ -2333,7 +2337,8 @@
       "exchange_fee": "Taxa de câmbio",
       "exchange_fee_description": "Taxa paga à bolsa ou ao mercado",
       "total_incl_fees": "incluindo taxas",
-      "close": "Fechar"
+      "close": "Fechar",
+      "fak_partial_fill_note": "Prices shown assume your order is fully filled. Actual amounts may vary if the order is only partially filled."
     },
     "error": {
       "title": "Não foi possível conectar-se às previsões",
@@ -6092,7 +6097,8 @@
       "fee": "Taxa",
       "errors": {
         "insufficient_balance": "Você não possui saldo de recursos suficiente para realizar esta ação."
-      }
+      },
+      "trx_unstaking_in_progress": "Unstaking {{amount}} TRX in progress. It takes 14 days for unstaking."
     },
     "stake_eth": "Fazer staking de ETH",
     "unstake_eth": "Retirar ETH do staking",
@@ -6343,7 +6349,8 @@
       "metamask_fee": "Taxa da MetaMask",
       "network_fee": "Taxa de rede",
       "bridge_fee": "Taxa do provedor de ponte",
-      "provider_fee": "Taxa do provedor"
+      "provider_fee": "Taxa do provedor",
+      "sending": "Sending"
     },
     "title": {
       "signature": "Solicitação de assinatura",
@@ -6603,6 +6610,10 @@
     "exceeding_upper_slippage_error": "Não é possível inserir um valor maior que {{value}}%",
     "custom": "Personalizado",
     "invalid_recipient_address": "Endereço inválido",
+    "select_quote": "Select Quote",
+    "select_quote_info": "Quotes are sorted by the estimated total cost, which includes the exchange rate and network fee.",
+    "lowest_cost": "Lowest cost",
+    "total_cost": "Total Cost",
     "got_it": "Got it"
   },
   "quote_expired_modal": {
@@ -7394,7 +7405,8 @@
   "pay_with_modal": {
     "title": "Selecione o método de pagamento",
     "title_receive": "Selecionar token de recebimento",
-    "no_gas": "Sem saldo nativo para gas"
+    "no_gas": "Sem saldo nativo para gas",
+    "not_supported": "Not supported"
   },
   "connection_removed_modal": {
     "title": "Conexões removidas",

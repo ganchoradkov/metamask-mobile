@@ -2197,6 +2197,7 @@
     "available_balance": "可用余额",
     "claim_amount_text": "领取 ${{amount}}",
     "claim_winnings_text": "领取收益",
+    "claiming_text": "Claiming...",
     "unrealized_pnl_label": "未实现盈亏",
     "unrealized_pnl_value": "{{amount}}（{{percent}}）",
     "unrealized_pnl_error": "无法加载",
@@ -2275,6 +2276,9 @@
           "title": "出错了......",
           "description": "继续领取失败",
           "try_again": "请重试"
+        },
+        "in_progress": {
+          "title": "Claim already in progress"
         }
       }
     },
@@ -2333,7 +2337,8 @@
       "exchange_fee": "交易所费用",
       "exchange_fee_description": "支付给交易所或市场的费用",
       "total_incl_fees": "包含费用",
-      "close": "关闭"
+      "close": "关闭",
+      "fak_partial_fill_note": "Prices shown assume your order is fully filled. Actual amounts may vary if the order is only partially filled."
     },
     "error": {
       "title": "无法连接预测市场",
@@ -6092,7 +6097,8 @@
       "fee": "费用",
       "errors": {
         "insufficient_balance": "您的资源余额不足以执行此操作。"
-      }
+      },
+      "trx_unstaking_in_progress": "Unstaking {{amount}} TRX in progress. It takes 14 days for unstaking."
     },
     "stake_eth": "质押 ETH",
     "unstake_eth": "解除质押 ETH",
@@ -6343,7 +6349,8 @@
       "metamask_fee": "MetaMask 费用",
       "network_fee": "网络费",
       "bridge_fee": "桥接服务商费用",
-      "provider_fee": "服务商费用"
+      "provider_fee": "服务商费用",
+      "sending": "Sending"
     },
     "title": {
       "signature": "签名请求",
@@ -6603,6 +6610,10 @@
     "exceeding_upper_slippage_error": "您输入的数值不能大于 {{value}}%",
     "custom": "自定义",
     "invalid_recipient_address": "地址无效",
+    "select_quote": "Select Quote",
+    "select_quote_info": "Quotes are sorted by the estimated total cost, which includes the exchange rate and network fee.",
+    "lowest_cost": "Lowest cost",
+    "total_cost": "Total Cost",
     "got_it": "Got it"
   },
   "quote_expired_modal": {
@@ -7394,7 +7405,8 @@
   "pay_with_modal": {
     "title": "选择付款方式",
     "title_receive": "选择收款代币",
-    "no_gas": "无支付燃料所需的原生代币余额"
+    "no_gas": "无支付燃料所需的原生代币余额",
+    "not_supported": "Not supported"
   },
   "connection_removed_modal": {
     "title": "连接已删除",

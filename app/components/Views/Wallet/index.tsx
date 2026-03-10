@@ -1367,6 +1367,16 @@ const Wallet = ({
     [],
   );
 
+  const skipSessionSummaryRef = useRef(false);
+  const skipNextSessionSummary = useCallback(() => {
+    skipSessionSummaryRef.current = true;
+  }, []);
+  const shouldSkipSessionSummary = useCallback(() => {
+    const skip = skipSessionSummaryRef.current;
+    skipSessionSummaryRef.current = false;
+    return skip;
+  }, []);
+
   const homepageScrollContextValue = useMemo(
     () => ({
       subscribeToScroll,
@@ -1376,6 +1386,8 @@ const Wallet = ({
       visitId,
       notifySectionViewed,
       getViewedSectionCount,
+      skipNextSessionSummary,
+      shouldSkipSessionSummary,
     }),
     [
       subscribeToScroll,
@@ -1385,6 +1397,8 @@ const Wallet = ({
       visitId,
       notifySectionViewed,
       getViewedSectionCount,
+      skipNextSessionSummary,
+      shouldSkipSessionSummary,
     ],
   );
 
